@@ -1,0 +1,474 @@
+@import"../../node_modules/bootstrap/scss/bootstrap";
+$primary-color: #DF0000;
+$secondary-color: #DF000052;
+$black: #000000;
+$white: #FFFFFF;
+$home-background: #E0E0E0;
+$grey: #C1C1C1;
+$indicator: #666481;
+$footer-background: #06060B;
+$footer-mobile: #1E1E23;
+body::-webkit-scrollbar{
+    display: none;
+}
+body{
+    .top-nav{
+        height: 105px;
+        padding-right: 50px;
+        padding-left: 50px;
+        .logo{
+            h1{
+                font-size: 20px;
+            }
+        }
+        .search{
+            font-size: 14px;
+            background: $home-background;
+            border-radius: 13px;
+            color:$black;
+            width: 400px;
+            .search-icon{
+                margin-left: 15px;
+            }
+            input{
+                background: none;
+                outline: none;
+                border: 0;
+                margin-left: 10px;
+                width:80%;
+                border-right: 3px solid #F4F4F4;
+            }
+            input::placeholder{
+                padding: 10px;
+                color: $black;
+            }
+            .icon-div{
+                width: 300px;
+                .anywhere{
+                    margin: 10px 15px;
+                }
+            }
+        }
+            border-right: 3px solid $grey;
+            .ul-nav{
+                li{
+                    list-style: none;
+                    a{
+                        text-decoration: none;
+                        color: $black;
+                        margin-right: 15px;
+                        font-size: 14px;
+                    }
+                    a:hover{
+                        color: $primary-color;
+                        text-decoration: underline;
+                    }
+                }
+    }
+    .auth-user{
+        // height: 40px;
+        padding: 10px;
+        a{
+            text-decoration: none;
+            color: $black;
+        }
+    }
+        .auth{
+            .sign, .login{
+                border: 1px solid $primary-color;
+                padding: 7px 20px;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: 400;
+            }
+            .login{
+                background: $primary-color;
+                color: $white;
+            }
+            .sign:hover{
+                background: $primary-color;
+                color: $white;
+            }
+            .login:hover{
+                background: $white;
+                color: $black;
+            }
+        }
+    }
+    .home-div{
+        height: 300px;
+        background: url('../images/home-back.svg');
+        color: $white;
+        .top-home{
+            h1{
+                font-size: 40px;
+            }
+            .search{
+                background: $white;
+                border-radius: 10px;
+                color:$black;
+                .search-icon{
+                    margin-left: 15px;
+                }
+                input{
+                    outline: none;
+                    border: 0;
+                    margin-left: 10px;
+                    width:62%;
+                    border-right: 3px solid $grey;
+                }
+                input::placeholder{
+                    padding: 10px;
+                }
+                .icon-div{
+                    width: 300px;
+                    .anywhere{
+                        margin: 10px 25px;
+                    }
+                }
+            }
+        }
+    }
+    .categories{
+        margin: 0;
+        .site-category{
+            border-right: 2px solid $grey;
+            font-size: 1rem;
+            width: 250px;
+            height: 250px;
+            h3{
+                font-size: 20px;
+                padding-top: 15px;
+                padding-left: 15px;
+            }
+            li{
+                list-style: none;
+                margin-bottom: 10px;
+                a{
+                    text-decoration: none;
+                    color: $black;
+                }
+            }
+        }
+        .sale{
+            border-radius: 15px;
+            width: 750px;
+            height: 350px;
+        }
+        .img-top{
+            position: absolute;
+            right: 100px;
+            padding-top: 25px;
+            font-size: 16px;
+            color: $white;
+            width: 130px;
+            height: 100px;
+            text-align: center;
+        }
+    }
+    .top-deals, .all-view{
+        h3{
+            font-size: 30px;
+            color:$primary-color;
+        }
+        .link{
+            a{
+                color: $primary-color;
+                text-decoration: none;
+            }
+        }
+        .deal-card::-webkit-scrollbar{
+            width: 0 !important;
+        }
+        .deal-card{
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+            .card-container{
+                min-width: 250px;
+                // max-height: 320px;
+                .discount{
+                    background: $primary-color;
+                    font-size: 15px;
+                    width: 40px;
+                    height: 35px;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    border-radius: 7px;
+                    color:$white;
+                    padding-top: 5px;
+                }
+                .icon{
+                    margin-left: 50px;
+                    margin-bottom: 15px;
+                }
+                h3{
+                    font-size: 20px;
+                    color: $black;
+                }
+                p{
+                    font-size: 14px;
+                }
+                .price-container{
+                    p{
+                        font-size: 16px;
+                    }
+                    .details{
+                        color: $primary-color;
+                        background: $secondary-color;
+                        font-size: 14px;
+                    }
+                    .details:hover{
+                        background: $primary-color;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+    .carousel{
+        height: 500px;
+        .carousel-img{
+            background: url('../images/back-move.svg');
+            width: 95%;
+            margin: auto;
+            margin-top: 50px;
+            border-radius: 25px;
+            .req-img{
+                width: 100%;
+                border-radius: 25px;
+            }
+            p{
+                color: $white;
+                font-size: 25px;
+                position: absolute;
+                bottom: 5px;
+                left: 45%;
+                padding: 10px;
+                background: rgba(0,0,0,0.5);
+            }
+        }
+        .changes{
+            .active-changes{
+                background: $grey;
+                width: 25px;
+                height: 8px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .active-changes:hover, .active{
+                background: $primary-color;
+                width: 35px;
+            }
+            .clear{
+                clear: both;
+            }
+        }
+    }
+    .popular-brand{
+        margin-top: 130px;
+        .top-brand{
+            h1{
+                font-size: 30px;
+            }
+            a{
+                color: $primary-color;
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+        }
+        .brands::-webkit-scrollbar{
+            display: none;
+        }
+        .brands{
+            margin-left: 30px;
+            display: flex;
+            overflow-x: auto;
+            height: 350px;
+            .brand-card{
+                border: 2px solid $grey;
+                border-radius: 50px;
+                min-height: 350px;
+                max-width: 220px;
+                display: inline-block;
+                .brands-img{
+                    border-bottom: 2px solid $grey;
+                }
+                .brand-inner{
+                    h3{
+                        color: $black;
+                        font-size: 24px;
+                    }
+                    .automobile{
+                        h4{
+                            margin-left: 20px;
+                            font-size: 16px;
+                        }
+                    }
+                    .details{
+                        color: $primary-color;
+                        background: $secondary-color;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .after-brand{
+        .first-after{
+            h3{
+                font-size: 20px;
+                color: $black;
+                line-height: 1.3;
+            }
+            .time{
+                .date{
+                    color: $white;
+                    margin: 6px;
+                    padding: 7px;
+                    border-radius: 5px;
+                    bor
+                    .p-brand{
+                        font-size: 16px;
+                        font-weight: bold;
+                        margin-bottom: 0;
+                        .p-tag{
+                            font-weight: 400;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .second-after{
+            padding-left: 20px;
+            .span{
+                font-size: 14px;
+                color: $primary-color;
+                background: $secondary-color;
+                padding: 4px 7px;
+                border-radius: 12px;
+            }
+        }
+    }
+    .footer{
+        background: $footer-background;
+        margin-top: 200px;
+        color: $white;
+        height: 600px;
+        a{
+            color: $white;
+            text-decoration: none;
+        }
+        a:hover{
+            color: $grey;
+        }
+        .footer-mobile{
+            background: $footer-mobile;
+            // width: 100px;
+            margin-bottom: 10px;
+            padding: 7px 12px;
+            border-radius: 20px;
+            h4{
+                font-size: 16px;
+            }
+        }
+        .ios{
+            width: 90px;
+        }
+        .ios h4, .android h4{
+            margin-left: 10px;
+        }
+        .android{
+            width: 110px;
+        }
+    }
+    .copy{
+        background: $footer-mobile;
+        color: $white;
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    // **********ELECTRICAL PAGE****************//
+    .elect-categories{
+        height: 400px;
+        border-right: 3px solid $grey;
+        h3{
+            font-size: 20px;
+            padding-top: 15px;
+            padding-left: 15px;
+        }
+        li{
+            list-style: none;
+            margin-bottom: 10px;
+            a{
+                text-decoration: none;
+                color: $black;
+            }
+        }
+    }
+    .all-view{
+        .back-track{
+            width: 70px;
+            height: 40px;
+            text-decoration: none;
+            color: $black;
+            .back-img{
+                border-radius: 50%;
+                color: $black;
+                border: 1px solid $black;
+                padding: 10px;
+            }
+            p{
+                margin-top: 10px;
+            }
+        }
+        .indicators{
+            .indi{
+                font-size: 14px;
+                .first{
+                    color: $indicator;
+                }
+            }
+            select{
+                outline: none;
+                border: none;
+                margin-right: 40px;
+                color: $indicator;
+            }
+        }
+    }
+    .similar{
+        border-radius: 10px;
+        .brand-card{
+            margin-right: 120px;
+            width: 400px;
+            .similar-image{
+                border-radius: 10px;
+            }
+            .brand-inner{
+                padding-left: 20px;
+                h3{
+                    font-size: 24px;
+                }
+                .automobile{
+                    h4{
+                        font-size: 14px;
+                        margin-left: 7px;
+                    }
+                }
+                .details{
+                    color: $primary-color;
+                    background: $secondary-color;
+                    font-size: 12px;
+                    margin-left: 50px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
