@@ -1,45 +1,116 @@
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+import Accordion from 'react-bootstrap/Accordion'
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
+// import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import { topDeals } from './home'
 import { similar } from './home'
-import { ReactComponent as Bike } from "../images/bike.svg"
-import { ReactComponent as Auto } from "../images/auto.svg"
-import { ReactComponent as Settings } from "../images/settings.svg"
 
+// function ContextAwareToggle({ children, eventKey, callback }) {
+//     const { activeEventKey } = useContext(AccordionContext);
+    
+//     const decoratedOnClick = useAccordionButton(
+//         eventKey,
+//         () => callback && callback(eventKey),
+//     );
+    
+//     const isCurrentEventKey = activeEventKey === eventKey;
+    
+//     return (
+//         <button
+//         type="button"
+//         style={{ backgroundColor: isCurrentEventKey ? PINK : BLUE }}
+//         onClick={decoratedOnClick}
+//         >
+//         {children}
+//         </button>
+//     );
+// }
 
 const Electrical = () => {
+
     return(
         <main>
           <div className='row'>
             <div className="elect-categories col-sm-3">
                 <h3>Categories</h3>
                 <ul className="w-100">
-                    <li className="w-100">
-                      <a href='#top' className="w-100 d-flex align-items-center jusytify-content-between">
-                        <img src={require('../images/electrical_services.jpg')} alt='icon living' />
-                        <p className='m-2'>Electrical</p>
-                        <img src={require('../images/Vector.jpg')} alt='...' />
-                      </a>
-                    </li>
-                    <li className="w-100">
-                      <a href='#top' className="w-100 d-flex align-items-center jusytify-content-between">
-                        <img src={require('../images/electrical_services.jpg')} alt='icon living' />
-                        <p className='m-2'>Mechanical</p>
-                        <img src={require('../images/Vector.jpg')} alt='...' />
-                      </a>
-                    </li>
-                    <li className="w-100">
-                      <a href='#top' className="w-100 d-flex align-items-center jusytify-content-between">
-                        <img src={require('../images/electrical_services.jpg')} alt='icon living' />
-                        <p className='m-2'>Electrical</p>
-                        <img src={require('../images/Vector.jpg')} alt='...' />
-                      </a>
-                    </li>
-                    <li className="w-100">
-                      <a href='#top' className="w-100 d-flex align-items-center jusytify-content-between">
-                        <img src={require('../images/electrical_services.jpg')} alt='icon living' />
-                        <p className='m-2'>Electrical</p>
-                        <img src={require('../images/Vector.jpg')} alt='...' />
-                      </a>
-                    </li>
+                    <Accordion>
+                        <Accordion.Item eventKey='0' className=''>
+                            <Accordion.Header className='accordion-item'>
+                                <div className='accordion-header'>
+                                    <img src={require('../images/electrical_services.jpg')} alt='icon living' className='accordion-img' />
+                                    <span className='accordion-span'>Electrical Products</span>
+                                </div>
+                               </Accordion.Header>
+                            <Accordion.Body>
+                                <ul>
+                                    <li><a href='#top'>Building Materials</a></li>
+                                    <li><a href='#top'>Computers and accessories</a></li>
+                                    <li><a href='#top'>Phone and accessories</a></li>
+                                    <li><a href='#top'>Solar Pannels</a></li>
+                                    <li><a href='#top'>Others</a></li>
+                                </ul>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                    <Accordion>
+                        <Accordion.Item eventKey='0' className=''>
+                            <Accordion.Header className='accordion-item'>
+                                <div className='accordion-header'>
+                                    <img src={require('../images/science.jpg')} alt='icon living' className='accordion-img' />
+                                    <span className='accordion-span'>Chemical products</span>
+                                </div>
+                               </Accordion.Header>
+                            <Accordion.Body>
+                                <ul>
+                                    <li><a href='#top'>Building Materials</a></li>
+                                    <li><a href='#top'>Computers and accessories</a></li>
+                                    <li><a href='#top'>Phone and accessories</a></li>
+                                    <li><a href='#top'>Solar Pannels</a></li>
+                                    <li><a href='#top'>Others</a></li>
+                                </ul>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                    <Accordion>
+                        <Accordion.Item eventKey='0' className=''>
+                            <Accordion.Header className='accordion-item'>
+                                <div className='accordion-header'>
+                                    <img src={require('../images/agriculture.jpg')} alt='icon living' className='accordion-img' />
+                                    <span className='accordion-span'>Farm Products</span>
+                                </div>
+                               </Accordion.Header>
+                            <Accordion.Body>
+                                <ul>
+                                    <li><a href='#top'>Building Materials</a></li>
+                                    <li><a href='#top'>Computers and accessories</a></li>
+                                    <li><a href='#top'>Phone and accessories</a></li>
+                                    <li><a href='#top'>Solar Pannels</a></li>
+                                    <li><a href='#top'>Others</a></li>
+                                </ul>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                    <Accordion>
+                        <Accordion.Item eventKey='0' className=''>
+                            <Accordion.Header className='accordion-item'>
+                                <div className='accordion-header'>
+                                    <img src={require('../images/precision_manufacturing.jpg')} alt='icon living' className='accordion-img' />
+                                    <span className='accordion-span'>Mechanical Products</span>
+                                </div>
+                               </Accordion.Header>
+                            <Accordion.Body>
+                                <ul>
+                                    <li><a href='#top'>Building Materials</a></li>
+                                    <li><a href='#top'>Computers and accessories</a></li>
+                                    <li><a href='#top'>Phone and accessories</a></li>
+                                    <li><a href='#top'>Solar Pannels</a></li>
+                                    <li><a href='#top'>Others</a></li>
+                                </ul>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
                 </ul>
             </div>
             <div className='all-view col-sm-9'>
@@ -48,11 +119,11 @@ const Electrical = () => {
                     <p>Back</p>
                 </a>
                 <div className='indicators d-flex align-items-center justify-content-between'>
-                    <div className='indi d-flex align-items-center justify-content-center'>
-                        <span className='first'>Electrical Products</span>
-                        <img src={require('../images/forward.jpg')} alt='' className='m-2'/>
-                        <span className='second'>Others</span>
-                    </div>
+                    <Breadcrumb className='indi d-flex align-items-center justify-content-center'>
+                        <Breadcrumb.Item href='#top' className='first breadcrumb'>Electrical Products</Breadcrumb.Item>
+                        {/* <img src={require('../images/forward.jpg')} alt='' className='m-2'/> */}
+                        <Breadcrumb.Item active className='second breadcrumb-active'>Others</Breadcrumb.Item>
+                    </Breadcrumb>
                     <select>
                         <option>Sort by: Newest</option>
                         <option>Sort by: Date</option>
@@ -79,38 +150,42 @@ const Electrical = () => {
 
                 {/* **************SIMILAR PRODUCT ***************** */}
                 <div className='popular-brand w-100 m-5'>
-                    <div className='top-brand d-flex align-items-center justify-content-between'>
+                    <div className='top-brand w-100 d-flex mb-4 align-items-center justify-content-between'>
                         <h1>Similar Products</h1>
                         <a href='#top'>View All</a>
                     </div>
-                    <div className='similar d-flex align-items-center justify-content-between w-100 mt-4'>
-                    { similar.map(item => {
+                <div className='similar w-100'>
+                  { similar.map(item => {
                     return(
-                        <div className='brand-card'>
-                            <div className='brands-img p-4'>
-                            <img src={item.image} alt='...' className='similar-image w-100'/>
-                            </div>
-                            <div className='brand-inner w-100 mt-3'>
-                                <h3 className='mt-4'>{item.name}</h3>
-                                <div className='automobile d-flex align-items-center'>
-                                <Auto />
-                                <h4 className=''>Automobile</h4>
-                                </div>
-                                <div className='automobile d-flex align-items-center'>
-                                <Settings />
-                                <h4 className=''>Parts</h4>
-                                </div>
-                                <div className='automobile d-flex align-items-center'>
-                                <Bike />
-                                <h4 className=''>Bicycle</h4>
-                                </div>
-                                <button className='btn details'>View Product Details</button>
-                            </div>
+                   <Card className='card m-2'>
+                    <Card.Img variant="top" src={item.image} />
+                    <Card.Body>
+                        <Card.Title>{item.name}</Card.Title>
+                        <Card.Text>
+                        <div className=''>
+                        <p>
+                            <img src={require('../images/factory.jpg')} alt='' />
+                            The Madisson
+                        </p>
+                        <p>
+                            <img src={require('../images/monetization_on.jpg')} alt='' />
+                            7 million
+                        </p>
+                        <p>
+                            <img src={require('../images/production.jpg')} alt='' />
+                            $900 per container
+                        </p>
                         </div>
-                            )
-                        })}
-                    </div>
+                        </Card.Text>
+                        <Button className="btn details">View Product Details </Button>
+                    </Card.Body>
+                    </Card>
+                    )
+                  })}
                 </div>
+                </div>    
+                </div>
+                <div>
             </div>
         </main>
     )

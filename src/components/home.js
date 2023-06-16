@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel'
+import Accordion from 'react-bootstrap/Accordion'
 import { ReactComponent as Search } from "../images/search.svg"
 import { ReactComponent as Drop } from "../images/Vector.svg"
 import { ReactComponent as Location } from "../images/location.svg"
@@ -22,29 +23,6 @@ const featured_data = [
   {
     image: require('../images/tesla.jpg'),
     description: 'Best Car Parts Deal'
-  }
-]
-
-export const categories = [
-  {
-    icon: require('../images/electrical_services.jpg'),
-    name: 'Electrical Products',
-    drop: require('../images/Vector.jpg')
-  },
-  {
-    icon: require('../images/science.jpg'),
-    name: 'Chemical Products',
-    drop: require('../images/Vector.jpg')
-  },
-  {
-    icon: require('../images/agriculture.jpg'),
-    name: 'Farm Products',
-    drop: require('../images/Vector.jpg')
-  },
-  {
-    icon: require('../images/precision_manufacturing.jpg'),
-    name: 'Mechanical Products',
-    drop: require('../images/Vector.jpg')
   }
 ]
 
@@ -356,33 +334,44 @@ export const popularBrands = [
 export const similar = [
   {
     image: require('../images/similar.jpg'),
-    name: 'Volvo',
+    name: '9” Curvy Pipe',
   },
   {
     image: require('../images/similar.jpg'),
-    name: 'Volvo',
+    name: '9” Curvy Pipe',
   },
   {
     image: require('../images/similar.jpg'),
-    name: 'Volvo',
+    name: '9” Curvy Pipe',
   },
   {
     image: require('../images/similar.jpg'),
-    name: 'Volvo',
+    name: '9” Curvy Pipe',
   },
   {
     image: require('../images/similar.jpg'),
-    name: 'Volvo',
+    name: '9” Curvy Pipe',
+  },
+  {
+    image: require('../images/similar.jpg'),
+    name: '9” Curvy Pipe',
+  },
+  {
+    image: require('../images/similar.jpg'),
+    name: '9” Curvy Pipe',
+  },
+  {
+    image: require('../images/similar.jpg'),
+    name: '9” Curvy Pipe',
+  },
+  {
+    image: require('../images/similar.jpg'),
+    name: '9” Curvy Pipe',
   },
 ]
 
 
 const Home = () => {
-  // const [index, setIndex] = useState(0);
-
-  // const handleSelect = (selectedIndex) => {
-  //   setIndex(selectedIndex);
-  // }
 
     return(
         <main>
@@ -403,27 +392,92 @@ const Home = () => {
 
           {/**************************CATEGORIES************** */}
 
-          <div className='categories d-flex align-items-center justify-content-between'>
-            <div className='site-category'>
+          <div className='categories d-flex align-items-center justify-content-between row'>
+            <div className='site-category mt-3 col-sm-3'>
                 <h3 className=''>Categories</h3>
                 <ul className="w-100">
-                  { categories.map( item => {
-                    return(
-                    <li className="w-100">
-                      <a href='#top' className="w-100 d-flex align-items-center jusytify-content-between">
-                        <img src={item.icon} alt='icon living' />
-                        <p className='m-2'>{item.name}</p>
-                        <img src={item.drop} alt='...' />
-                      </a>
-                    </li>
-                    )
-                  })}
+                <Accordion>
+                        <Accordion.Item eventKey='0' className=''>
+                            <Accordion.Header className='accordion-item'>
+                                <div className='accordion-header'>
+                                    <img src={require('../images/electrical_services.jpg')} alt='icon living' className='accordion-img' />
+                                    <span className='accordion-span'>Electrical Products</span>
+                                </div>
+                               </Accordion.Header>
+                            <Accordion.Body>
+                                <ul>
+                                    <li><a href='#top'>Building Materials</a></li>
+                                    <li><a href='#top'>Computers and accessories</a></li>
+                                    <li><a href='#top'>Phone and accessories</a></li>
+                                    <li><a href='#top'>Solar Pannels</a></li>
+                                    <li><a href='#top'>Others</a></li>
+                                </ul>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                    <Accordion>
+                        <Accordion.Item eventKey='0' className=''>
+                            <Accordion.Header className='accordion-item'>
+                                <div className='accordion-header'>
+                                    <img src={require('../images/science.jpg')} alt='icon living' className='accordion-img' />
+                                    <span className='accordion-span'>Chemical products</span>
+                                </div>
+                               </Accordion.Header>
+                            <Accordion.Body>
+                                <ul>
+                                    <li><a href='#top'>Building Materials</a></li>
+                                    <li><a href='#top'>Computers and accessories</a></li>
+                                    <li><a href='#top'>Phone and accessories</a></li>
+                                    <li><a href='#top'>Solar Pannels</a></li>
+                                    <li><a href='#top'>Others</a></li>
+                                </ul>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                    <Accordion>
+                        <Accordion.Item eventKey='0' className=''>
+                            <Accordion.Header className='accordion-item'>
+                                <div className='accordion-header'>
+                                    <img src={require('../images/agriculture.jpg')} alt='icon living' className='accordion-img' />
+                                    <span className='accordion-span'>Farm Products</span>
+                                </div>
+                               </Accordion.Header>
+                            <Accordion.Body>
+                                <ul>
+                                    <li><a href='#top'>Building Materials</a></li>
+                                    <li><a href='#top'>Computers and accessories</a></li>
+                                    <li><a href='#top'>Phone and accessories</a></li>
+                                    <li><a href='#top'>Solar Pannels</a></li>
+                                    <li><a href='#top'>Others</a></li>
+                                </ul>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                    <Accordion>
+                        <Accordion.Item eventKey='0' className=''>
+                            <Accordion.Header className='accordion-item'>
+                                <div className='accordion-header'>
+                                    <img src={require('../images/precision_manufacturing.jpg')} alt='icon living' className='accordion-img' />
+                                    <span className='accordion-span'>Mechanical Products</span>
+                                </div>
+                               </Accordion.Header>
+                            <Accordion.Body>
+                                <ul>
+                                    <li><a href='#top'>Building Materials</a></li>
+                                    <li><a href='#top'>Computers and accessories</a></li>
+                                    <li><a href='#top'>Phone and accessories</a></li>
+                                    <li><a href='#top'>Solar Pannels</a></li>
+                                    <li><a href='#top'>Others</a></li>
+                                </ul>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
                 </ul>
             </div>
 
             {/**********************************SIDE PHOTOS******************* */}
 
-            <div className='w-50 mt-4'>
+            <div className='w-50 pt-5 col-sm-8'>
             <img src={require('../images/cat-pic.jpg')} alt='...' className='sale' />
             </div>
             <div className='w-25 d-flex flex-column align-items-center justify-content-between'>
