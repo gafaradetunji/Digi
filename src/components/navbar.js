@@ -15,7 +15,7 @@ const Navbar = () => {
                     <ul className='ul-nav nav d-flex align-items-center justify-content-between'>
                         <li className='nav-item'><a className='nav-link active' aria-current="true" href={`home`}>Home</a></li>
                         <li className='nav-item'><a className='nav-link' href={`eletrical`}>X-Services</a></li>
-                        <li className='nav-item'><a className='nav-link' href='#top'>Contact Us</a></li>
+                        <li className='nav-item'><a className='nav-link' href={`eletrical`}>Contact Us</a></li>
                     </ul>
                 </div>
                 <div className='auth'>
