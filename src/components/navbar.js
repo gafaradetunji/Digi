@@ -14,8 +14,8 @@ const Navbar = () => {
                 <div className='nav'>
                     <ul className='ul-nav nav d-flex align-items-center justify-content-between'>
                         <li className='nav-item'><a className='nav-link active' aria-current="true" href={`home`}>Home</a></li>
-                        <li className='nav-item'><a className='nav-link' href='#'>X-Services</a></li>
-                        <li className='nav-item'><a className='nav-link' href='#'>Contact Us</a></li>
+                        <li className='nav-item'><a className='nav-link' href={`eletrical`}>X-Services</a></li>
+                        <li className='nav-item'><a className='nav-link' href='#top'>Contact Us</a></li>
                     </ul>
                 </div>
                 <div className='auth'>
@@ -38,24 +38,24 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className='about-footer col-sm-2'>
-                    <p><a href='#'>About Digi</a></p>
-                    <p><a href='#'>Manufacturers</a></p>
-                    <p><a href='#'>Careers</a></p>
+                    <p><a href='#top'>About Digi</a></p>
+                    <p><a href='#top'>Manufacturers</a></p>
+                    <p><a href='#top'>Careers</a></p>
                 </div>
                 <div className='footer-legal col-sm-2'>
-                    <p><a href=''>Legal</a></p>
-                    <p><a href=''>Privacy policy</a></p>
-                    <p><a href=''>Terms of use</a></p>
-                    <p><a href=''>Report Abuse</a></p>
-                    <p><a href=''>Avoid scams & fraud</a></p>
-                    <p><a href=''>System status</a></p>
+                    <p><a href='#top'>Legal</a></p>
+                    <p><a href='#top'>Privacy policy</a></p>
+                    <p><a href='#top'>Terms of use</a></p>
+                    <p><a href='#top'>Report Abuse</a></p>
+                    <p><a href='#top'>Avoid scams & fraud</a></p>
+                    <p><a href='#top'>System status</a></p>
                 </div>
                 <div className='socials col-sm-2'>
-                    <p><a href=''>Social Media</a></p>
-                    <p><a href=''><Facebook /></a></p>
-                    <p><a href=''><Instagram /></a></p>
-                    <p><a href=''><Twitter /></a></p>
-                    <p><a href=''><Linkedin /></a></p>
+                    <p><a href='#top'>Social Media</a></p>
+                    <p><a href='#top'><Facebook /></a></p>
+                    <p><a href='#top'><Instagram /></a></p>
+                    <p><a href='#top'><Twitter /></a></p>
+                    <p><a href='#top'><Linkedin /></a></p>
                 </div>
             </footer>
             <div className='copy text-center'>

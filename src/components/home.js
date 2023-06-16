@@ -410,7 +410,7 @@ const Home = () => {
                   { categories.map( item => {
                     return(
                     <li className="w-100">
-                      <a href='#' className="w-100 d-flex align-items-center jusytify-content-between">
+                      <a href='#top' className="w-100 d-flex align-items-center jusytify-content-between">
                         <img src={item.icon} alt='icon living' />
                         <p className='m-2'>{item.name}</p>
                         <img src={item.drop} alt='...' />
@@ -440,8 +440,8 @@ const Home = () => {
         <div className='top-deals m-4'>
             <h1>Top Deals</h1>
             <div className='link d-flex align-items-center justify-content-between'>
-                <a href='#'>Cheapest Price Ever</a>
-                <a href='#'>View All</a>
+                <a href='#top'>Cheapest Price Ever</a>
+                <a href='#top'>View All</a>
             </div>
          <div className='deal-card w-100 mt-4 carousel slide' id='myCarousel' data-ride='carousel'>
            { topDeals.map(item => {
@@ -469,7 +469,7 @@ const Home = () => {
         <div className='top-deals m-4'>
             <h1>Chemical Products</h1>
             <div className='link d-flex align-items-center justify-content-between'>
-                <a href='#'>View All</a>
+                <a href='#top'>View All</a>
             </div>
          <div className='deal-card w-100 mt-4'>
            { chemicals.map(item => {
@@ -532,7 +532,7 @@ const Home = () => {
          <div className='popular-brand w-100 mb-5'>
             <div className='top-brand d-flex align-items-center justify-content-between'>
                 <h1>Popular Brand Products</h1>
-                <a href='#'>View All</a>
+                <a href='#top'>View All</a>
             </div>
             <div className='brands w-100 mt-4'>
               { popularBrands.map(item => {
@@ -605,8 +605,8 @@ const Home = () => {
          <div className='top-deals m-4'>
             <h1>Plumbing Products</h1>
             <div className='link d-flex align-items-center justify-content-between'>
-                <a href='#'>Cheapest Price Ever</a>
-                <a href='#'>View All</a>
+                <a href='#top'>Cheapest Price Ever</a>
+                <a href='#top'>View All</a>
             </div>
          <div className='deal-card w-100 mt-4'>
             { plumbing.map(item => {
@@ -630,8 +630,8 @@ const Home = () => {
          <div className='top-deals m-4'>
             <h1>Featured Products</h1>
             <div className='link d-flex align-items-center justify-content-between'>
-                <a href='#'>Cheapest Price Ever</a>
-                <a href='#'>View All</a>
+                <a href='#top'>Cheapest Price Ever</a>
+                <a href='#top'>View All</a>
             </div>
          <div className='deal-card w-100 mt-4'>
             { featured.map(item => {

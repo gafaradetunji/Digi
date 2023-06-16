@@ -1,10 +1,10 @@
 import Navbar from './components/navbar'
 import Home from './components/home'
-import Nav2 from './components/nav2'
+// import Nav2 from './components/nav2'
 import Electrical from './components/electrical'
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './scss/app.scss'
-import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
 
@@ -21,6 +21,10 @@ function App() {
           path: '',
           element: <Home />
         },
+        {
+          path: '/eletrical',
+          element: <Electrical />
+        }
       ] ,
     },
   ])

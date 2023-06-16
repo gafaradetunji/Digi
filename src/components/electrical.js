@@ -13,28 +13,28 @@ const Electrical = () => {
                 <h3>Categories</h3>
                 <ul className="w-100">
                     <li className="w-100">
-                      <a href='#' className="w-100 d-flex align-items-center jusytify-content-between">
+                      <a href='#top' className="w-100 d-flex align-items-center jusytify-content-between">
                         <img src={require('../images/electrical_services.jpg')} alt='icon living' />
                         <p className='m-2'>Electrical</p>
                         <img src={require('../images/Vector.jpg')} alt='...' />
                       </a>
                     </li>
                     <li className="w-100">
-                      <a href='#' className="w-100 d-flex align-items-center jusytify-content-between">
+                      <a href='#top' className="w-100 d-flex align-items-center jusytify-content-between">
                         <img src={require('../images/electrical_services.jpg')} alt='icon living' />
                         <p className='m-2'>Mechanical</p>
                         <img src={require('../images/Vector.jpg')} alt='...' />
                       </a>
                     </li>
                     <li className="w-100">
-                      <a href='#' className="w-100 d-flex align-items-center jusytify-content-between">
+                      <a href='#top' className="w-100 d-flex align-items-center jusytify-content-between">
                         <img src={require('../images/electrical_services.jpg')} alt='icon living' />
                         <p className='m-2'>Electrical</p>
                         <img src={require('../images/Vector.jpg')} alt='...' />
                       </a>
                     </li>
                     <li className="w-100">
-                      <a href='#' className="w-100 d-flex align-items-center jusytify-content-between">
+                      <a href='#top' className="w-100 d-flex align-items-center jusytify-content-between">
                         <img src={require('../images/electrical_services.jpg')} alt='icon living' />
                         <p className='m-2'>Electrical</p>
                         <img src={require('../images/Vector.jpg')} alt='...' />
@@ -43,7 +43,7 @@ const Electrical = () => {
                 </ul>
             </div>
             <div className='all-view col-sm-9'>
-                <a href='#' className='back-track d-flex align-items-center justify-content-between'>
+                <a href='#top' className='back-track d-flex align-items-center justify-content-between'>
                     <img src={require('../images/back-track.jpg')} alt='' className='back-img'/>
                     <p>Back</p>
                 </a>
@@ -81,7 +81,7 @@ const Electrical = () => {
                 <div className='popular-brand w-100 m-5'>
                     <div className='top-brand d-flex align-items-center justify-content-between'>
                         <h1>Similar Products</h1>
-                        <a href='#'>View All</a>
+                        <a href='#top'>View All</a>
                     </div>
                     <div className='similar d-flex align-items-center justify-content-between w-100 mt-4'>
                     { similar.map(item => {
