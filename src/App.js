@@ -25,7 +25,7 @@ function App() {
           path: '/eletrical',
           element: <Electrical />
         }
-      ] ,
+      ],
     },
   ])
 
