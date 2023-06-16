@@ -1,4 +1,3 @@
-import { ReactComponent as Logo } from '../images/logo.svg'
 import { ReactComponent as Ios } from '../images/ios.svg'
 import { ReactComponent as Android } from '../images/android.svg'
 import { ReactComponent as Twitter } from '../images/twitter.svg'
@@ -11,7 +10,7 @@ const Navbar = () => {
     return(
         <main>
             <div className='top-nav w-100 mt-2 d-flex align-items-center justify-content-between'>
-                <div className='logo d-flex align-items-center'><Logo /><h1>Digi</h1></div>
+                <div className='logo d-flex align-items-center'><img src={require('../images/logo2.jpg')} alt='' /><h1>Digi</h1></div>
                 <div className='nav'>
                     <ul className='ul-nav nav d-flex align-items-center justify-content-between'>
                         <li className='nav-item'><a className='nav-link active' aria-current="true" href={`home`}>Home</a></li>
@@ -27,7 +26,7 @@ const Navbar = () => {
             <Outlet />
             <footer className='footer row p-5'>
                 <div className='footer-logo col-sm-6'>
-                    <Logo />
+                <img src={require('../images/logo2.jpg')} alt='' />
                     <p>Download Digi Mobile App</p>
                     <div className='footer-mobile ios d-flex align-items-center justify-content-center'>
                         <Ios />

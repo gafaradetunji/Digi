@@ -1,10 +1,7 @@
-import { useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import { ReactComponent as Search } from "../images/search.svg"
 import { ReactComponent as Drop } from "../images/Vector.svg"
 import { ReactComponent as Location } from "../images/location.svg"
-import { ReactComponent as AirCon } from "../images/aircon.svg"
-import { ReactComponent as CarBrand } from "../images/car-brand.svg"
 import { ReactComponent as Bike } from "../images/bike.svg"
 import { ReactComponent as Auto } from "../images/auto.svg"
 import { ReactComponent as Settings } from "../images/settings.svg"
@@ -381,11 +378,11 @@ export const similar = [
 
 
 const Home = () => {
-  const [index, setIndex] = useState(0);
+  // const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  }
+  // const handleSelect = (selectedIndex) => {
+  //   setIndex(selectedIndex);
+  // }
 
     return(
         <main>

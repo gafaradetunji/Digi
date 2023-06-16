@@ -1,4 +1,3 @@
-import { ReactComponent as Logo } from '../images/logo.svg'
 import { ReactComponent as Location } from '../images/location.svg'
 import { ReactComponent as Search } from '../images/search.svg'
 import { ReactComponent as Drop } from '../images/Vector.svg'
@@ -13,7 +12,7 @@ const Nav2 = () => {
     return(
         <main>
             <div className='top-nav container-fluid pt-4 d-flex align-items-center justify-content-between'>
-              <div className='d-flex align-items-center justify-content-between logo'><Logo /><h1>Digi</h1></div>
+              <div className='d-flex align-items-center justify-content-between logo'><img src={require('../images/logo2.jpg')} alt='' /><h1>Digi</h1></div>
               <form className='search d-flex align-items-center flex-row'>
                 <Search className='search-icon'/> 
                 <input type='text' className='' placeholder='Search Digistore'/>
@@ -41,7 +40,7 @@ const Nav2 = () => {
             <Outlet />
             <footer className='footer row p-5'>
                 <div className='footer-logo col-sm-6'>
-                    <Logo />
+                <img src={require('../images/logo2.jpg')} alt='' />
                     <p>Download Digi Mobile App</p>
                     <div className='footer-mobile ios d-flex align-items-center justify-content-center'>
                         <Ios />

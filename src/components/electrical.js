@@ -1,26 +1,10 @@
-import { categories } from './home'
 import { topDeals } from './home'
 import { similar } from './home'
 import { ReactComponent as Bike } from "../images/bike.svg"
 import { ReactComponent as Auto } from "../images/auto.svg"
 import { ReactComponent as Settings } from "../images/settings.svg"
 
-{/* <div className="elect-categories">
-    <h3>Categories</h3>
-    <ul className="w-100">
-      { categories.map( item => {
-        return(
-        <li className="w-100">
-          <a href='#' className="w-100 d-flex align-items-center jusytify-content-between">
-            <img src={item.icon} alt='icon living' />
-            <p className='m-2'>{item.name}</p>
-            <img src={item.drop} alt='...' />
-          </a>
-        </li>
-        )
-      })}
-    </ul>
-</div> */}
+
 const Electrical = () => {
     return(
         <main>
