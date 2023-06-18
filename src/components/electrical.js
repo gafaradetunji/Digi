@@ -2,30 +2,8 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion'
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
-// import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import { topDeals } from './home'
 import { similar } from './home'
-
-// function ContextAwareToggle({ children, eventKey, callback }) {
-//     const { activeEventKey } = useContext(AccordionContext);
-    
-//     const decoratedOnClick = useAccordionButton(
-//         eventKey,
-//         () => callback && callback(eventKey),
-//     );
-    
-//     const isCurrentEventKey = activeEventKey === eventKey;
-    
-//     return (
-//         <button
-//         type="button"
-//         style={{ backgroundColor: isCurrentEventKey ? PINK : BLUE }}
-//         onClick={decoratedOnClick}
-//         >
-//         {children}
-//         </button>
-//     );
-// }
 
 const Electrical = () => {
 

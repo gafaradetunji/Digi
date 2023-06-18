@@ -1,45 +1,31 @@
-import Navbar from './components/navbar'
-import Home from './components/home'
-// import Nav2 from './components/nav2'
-import Electrical from './components/electrical'
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import './scss/app.scss'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import NavBar from './components/navbar';
+import Home from './components/home';
+import Register from './components/register';
+import Login from './components/login';
+import ForgotPass from './components/forgot-pass';
+import Electrical from './components/electrical';
+import ForgotOTP from './components/forgot-otp';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './scss/app.scss';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import NewPassword from './components/newPassword';
 
 function App() {
-
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <Navbar />,
-      children: [
-        {
-          path: '/home',
-          element: <Home />
-        },
-        {
-          path: '',
-          element: <Home />
-        },
-        {
-          path: '/eletrical',
-          element: <Electrical />
-        }
-      ],
-    },
-  ])
-
   return (
-    <div className="">
-    {/* <Router>
-      <Navbar />
-      <Switch>
-      <Route exact path="/" component={Home} />
-      </Switch>
-    </Router> */}
-      <RouterProvider router={router} />
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route path='/' element={<NavBar />}>
+          <Route index element={<Home />} />
+          <Route path="/electrical" element={<Electrical />} />
+        </Route>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgotPass" element={<ForgotPass />} />
+        <Route path="/forgototp" element={<ForgotOTP />} />
+        <Route path="/newpass" element={<NewPassword />} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;

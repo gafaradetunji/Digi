@@ -375,7 +375,12 @@ const Home = () => {
 
     return(
         <main>
-          <div className='home-div w-100 d-flex  flex-row m-auto align-items-center justify-content-center'>
+          <form className='mobile-form'>
+            <Search className='search-icon'/> 
+            <input type='text' className='' placeholder='Search Digistore'/>
+          </form>
+          <div className='home-mobile'>
+          <div className='home-div w-100 d-flex flex-row m-auto align-items-center justify-content-center'>
             <div className='top-home w-50 text-center'>
               <h1>Yorem Ipsum dolor sit amet</h1>
               <form className='search mt-3 d-flex align-items-center flex-row w-100 align-self-center'>
@@ -389,10 +394,11 @@ const Home = () => {
               </form>
             </div>
           </div>
+          </div>
 
           {/**************************CATEGORIES************** */}
 
-          <div className='categories d-flex align-items-center justify-content-between row'>
+          <div className='categories row'>
             <div className='site-category mt-3 col-sm-3'>
                 <h3 className=''>Categories</h3>
                 <ul className="w-100">
@@ -474,24 +480,26 @@ const Home = () => {
                     </Accordion>
                 </ul>
             </div>
-
-            {/**********************************SIDE PHOTOS******************* */}
-
-            <div className='w-50 pt-5 col-sm-8'>
-            <img src={require('../images/cat-pic.jpg')} alt='...' className='sale' />
+            <div className='w-50 pt-5 col-sm-6'>
+            <img src={require('../images/cat-pic.jpg')} alt='...' className='sale mobile-pic' />
             </div>
-            <div className='w-25 d-flex flex-column align-items-center justify-content-between'>
-              { sidePhoto.map(item => {
-                return(
-                  <div className="mt-2"><img src={item.image} alt='...'/><span className='img-top'>{item.description}</span></div>
-                )
-              })}
+            <div className='side-photo col-sm-3'>
+              <div className='w-25 mt-5 d-flex flex-column align-items-center justify-content-between'>
+                { sidePhoto.map(item => {
+                  return(
+                    <div className="mt-2 absolute-img"><img src={item.image} alt='...'/><span className='img-top'>{item.description}</span></div>
+                  )
+                })}
+              </div>
             </div>
           </div>
 
+            {/**********************************SIDE PHOTOS******************* */}
+
+
           {/*****************TOP DEALS******************* */}
 
-        <div className='top-deals m-4'>
+        <div className='top-deals mt-4'>
             <h1>Top Deals</h1>
             <div className='link d-flex align-items-center justify-content-between'>
                 <a href='#top'>Cheapest Price Ever</a>
@@ -503,7 +511,6 @@ const Home = () => {
               <div className='card-container m-3'>
                   <p className='discount'>-{item.cut}%</p>
                   <img src={item.image} alt='...' className='icon'/>
-                  {/* <AirCon className='icon' /> */}
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>
                   <div className='price-container d-flex align-items-center justify-content-between'>
@@ -520,7 +527,7 @@ const Home = () => {
          {/* /****************CHEMICAL PRODUCTS *********/}
 
 
-        <div className='top-deals m-4'>
+        <div className='top-deals mt-4'>
             <h1>Chemical Products</h1>
             <div className='link d-flex align-items-center justify-content-between'>
                 <a href='#top'>View All</a>
@@ -551,7 +558,7 @@ const Home = () => {
                 <Carousel.Item className='carousel-img'>
                     <img src={item.image} alt='oookkkkk' className='req-img d-block'/>
                     <Carousel.Caption>
-                      <p className='text-center'>{item.description}</p>
+                      <p className='text-center carousel-p'>{item.description}</p>
                     </Carousel.Caption>
                 </Carousel.Item>
               )
@@ -656,7 +663,7 @@ const Home = () => {
             </div>
          </div>
          {/**********************************PLUMBING PRODUCTS********************** */}
-         <div className='top-deals m-4'>
+         <div className='top-deals mt-4'>
             <h1>Plumbing Products</h1>
             <div className='link d-flex align-items-center justify-content-between'>
                 <a href='#top'>Cheapest Price Ever</a>
@@ -681,7 +688,7 @@ const Home = () => {
          </div>
          </div>
          {/**************************FEATURED PRODUCTS********************** */}
-         <div className='top-deals m-4'>
+         <div className='top-deals mt-4'>
             <h1>Featured Products</h1>
             <div className='link d-flex align-items-center justify-content-between'>
                 <a href='#top'>Cheapest Price Ever</a>
