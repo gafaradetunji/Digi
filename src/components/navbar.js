@@ -12,8 +12,9 @@ import { useState } from 'react'
 
 const NavBar = () => {
     const navigate = useNavigate()
-    const [showCategory, setShowCategory] = useState(false);
-    const [hideCategory, setHideCategory] = useState(true);
+    const [showCategory, setShowCategory] = useState(false)
+    const [hideCategory, setHideCategory] = useState(true)
+    const [showElement, setShowElement] = useState(false);
 
 
     const showCat = () => {
@@ -26,6 +27,12 @@ const NavBar = () => {
         console.log('hide working')
         setHideCategory(prevState => !prevState);
         console.log('hide worked')
+    }
+
+    const hideBuildFunc = () => {
+        setShowElement(!showElement);
+        // const element = document.querySelector('.ul-inner-accordion')
+        // element.classList.add('hide-inner-cat')
     }
 
     return(
@@ -44,10 +51,10 @@ const NavBar = () => {
             <div className={`collapse ${hideCategory ? 'show' : ''} category-show cat-nav navbar-collapse`} id="#navbarSupportedContent">
             <div className='d-flex align-self-items justify-content-between'>
               <h3 className=''>Categories</h3>
-              <button className={`show ${hideCategory ? 'collapse' : ''}`}onClick={hideCat} style={{ border: 'none', outline: 'none'}}><img src={require('../images/cancel.jpg')} alt='' style={{ width: '30px', height: '30px'}} /></button>
+              <button className={`show ${hideCategory ? 'collapse' : ''}`} onClick={hideCat} style={{ border: 'none', outline: 'none'}}><img src={require('../images/cancel.jpg')} alt='' style={{ width: '30px', height: '30px'}} /></button>
             </div>
             <ul className="navbar-nav ml-auto mb-2 mb-lg-0 category-nav">
-            <Accordion>
+            <Accordion flush>
                 <Accordion.Item eventKey='0' className='nav-item'>
                     <Accordion.Header className='accordion-item p-2'>
                         <div className='accordion-header'>
@@ -57,71 +64,74 @@ const NavBar = () => {
                         </Accordion.Header>
                     <Accordion.Body>
                         <ul>
-                        <Accordion>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Building Materials</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Others</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
+                        <div className={`ul-inner-accordion ${ showElement ? 'hide-inner-cat' : 'show-inner-cat' }`}>
+                            <button className='mb-5 back-arrow' onClick={hideBuildFunc}><img src={require('../images/back-arrow.jpg')} alt='' /></button>
+                            <Accordion className='pt-3 pb-3' flush>
+                                <Accordion.Item>
+                                <Accordion.Header href='#top'>Building Materials</Accordion.Header>
+                                <Accordion.Body>
+                                    <ul>
+                                        <li><a href='#top'>Computers and accessories</a></li>
+                                        <li><a href='#top'>Phone and accessories</a></li>
+                                        <li><a href='#top'>Solar Pannels</a></li>
+                                    </ul>
+                                </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                            <Accordion className='pt-3 pb-3' flush>
+                                <Accordion.Item>
+                                <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
+                                <Accordion.Body>
+                                    <ul>
+                                        <li><a href='#top'>Computers and accessories</a></li>
+                                        <li><a href='#top'>Phone and accessories</a></li>
+                                        <li><a href='#top'>Solar Pannels</a></li>
+                                    </ul>
+                                </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                            <Accordion className='pt-3 pb-3' flush>
+                                <Accordion.Item>
+                                <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
+                                <Accordion.Body>
+                                    <ul>
+                                        <li><a href='#top'>Computers and accessories</a></li>
+                                        <li><a href='#top'>Phone and accessories</a></li>
+                                        <li><a href='#top'>Solar Pannels</a></li>
+                                    </ul>
+                                </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                            <Accordion className='pt-3 pb-3' flush>
+                                <Accordion.Item>
+                                <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
+                                <Accordion.Body>
+                                    <ul>
+                                        <li><a href='#top'>Computers and accessories</a></li>
+                                        <li><a href='#top'>Phone and accessories</a></li>
+                                        <li><a href='#top'>Solar Pannels</a></li>
+                                    </ul>
+                                </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                            <Accordion className='pt-3 pb-3' flush>
+                                <Accordion.Item>
+                                <Accordion.Header href='#top'>Others</Accordion.Header>
+                                <Accordion.Body>
+                                    <ul>
+                                        <li><a href='#top'>Computers and accessories</a></li>
+                                        <li><a href='#top'>Phone and accessories</a></li>
+                                        <li><a href='#top'>Solar Pannels</a></li>
+                                    </ul>
+                                </Accordion.Body>
+                                </Accordion.Item>
+                            </Accordion>
+                        </div>
                         </ul>
                     </Accordion.Body>
                 </Accordion.Item>
                 </Accordion>
-                <Accordion>
+                <Accordion flush>
                     <Accordion.Item eventKey='0' className='nav-item'>
                         <Accordion.Header className='accordion-item p-2'>
                             <div className='accordion-header'>
@@ -131,7 +141,7 @@ const NavBar = () => {
                             </Accordion.Header>
                         <Accordion.Body>
                             <ul>
-                            <Accordion>
+                            <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Building Materials</Accordion.Header>
                               <Accordion.Body>
@@ -143,7 +153,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
                               <Accordion.Body>
@@ -155,7 +165,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
                               <Accordion.Body>
@@ -167,7 +177,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
                               <Accordion.Body>
@@ -179,7 +189,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Others</Accordion.Header>
                               <Accordion.Body>
@@ -195,7 +205,7 @@ const NavBar = () => {
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
-                <Accordion>
+                <Accordion flush>
                     <Accordion.Item eventKey='0' className='nav-item'>
                         <Accordion.Header className='accordion-item p-2'>
                             <div className='accordion-header'>
@@ -205,7 +215,7 @@ const NavBar = () => {
                             </Accordion.Header>
                         <Accordion.Body>
                             <ul>
-                            <Accordion>
+                            <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Building Materials</Accordion.Header>
                               <Accordion.Body>
@@ -217,7 +227,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
                               <Accordion.Body>
@@ -229,7 +239,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
                               <Accordion.Body>
@@ -241,7 +251,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
                               <Accordion.Body>
@@ -253,7 +263,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Others</Accordion.Header>
                               <Accordion.Body>
@@ -269,7 +279,7 @@ const NavBar = () => {
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
-                <Accordion>
+                <Accordion flush>
                     <Accordion.Item eventKey='0' className='nav-item'>
                         <Accordion.Header className='accordion-item p-2'>
                             <div className='accordion-header'>
@@ -279,7 +289,7 @@ const NavBar = () => {
                             </Accordion.Header>
                         <Accordion.Body>
                             <ul>
-                            <Accordion>
+                            <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Building Materials</Accordion.Header>
                               <Accordion.Body>
@@ -291,7 +301,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
                               <Accordion.Body>
@@ -303,7 +313,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
                               <Accordion.Body>
@@ -315,7 +325,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
                               <Accordion.Body>
@@ -327,7 +337,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Others</Accordion.Header>
                               <Accordion.Body>
@@ -350,7 +360,7 @@ const NavBar = () => {
             <nav className='category-nav'>
             <h3 className='mt-4'>Services</h3>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-            <Accordion>
+            <Accordion flush>
                 <Accordion.Item eventKey='0' className='nav-item'>
                     <Accordion.Header className='accordion-item p-2'>
                         <div className='accordion-header'>
@@ -360,7 +370,7 @@ const NavBar = () => {
                         </Accordion.Header>
                     <Accordion.Body>
                         <ul>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Building Materials</Accordion.Header>
                               <Accordion.Body>
@@ -372,7 +382,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
                               <Accordion.Body>
@@ -384,7 +394,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
                               <Accordion.Body>
@@ -396,7 +406,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
                               <Accordion.Body>
@@ -408,7 +418,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Others</Accordion.Header>
                               <Accordion.Body>
@@ -424,7 +434,7 @@ const NavBar = () => {
                     </Accordion.Body>
                 </Accordion.Item>
                 </Accordion>
-                <Accordion>
+                <Accordion flush>
                     <Accordion.Item eventKey='0' className='nav-item'>
                         <Accordion.Header className='accordion-item p-2'>
                             <div className='accordion-header'>
@@ -434,7 +444,7 @@ const NavBar = () => {
                             </Accordion.Header>
                         <Accordion.Body>
                             <ul>
-                            <Accordion>
+                            <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Building Materials</Accordion.Header>
                               <Accordion.Body>
@@ -446,7 +456,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
                               <Accordion.Body>
@@ -458,7 +468,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
                               <Accordion.Body>
@@ -470,7 +480,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
                               <Accordion.Body>
@@ -482,7 +492,7 @@ const NavBar = () => {
                               </Accordion.Body>
                             </Accordion.Item>
                         </Accordion>
-                        <Accordion>
+                        <Accordion flush>
                             <Accordion.Item>
                               <Accordion.Header href='#top'>Others</Accordion.Header>
                               <Accordion.Body>
