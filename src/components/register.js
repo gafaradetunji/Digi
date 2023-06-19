@@ -6,7 +6,7 @@ const Register = () => {
           <nav className='navbar navbar-expand-lg'>
             <div className='register container-fluid'>
                 <p className='finance'>
-                  <a href={`home`} className='navbar-brand'>
+                  <a href={`/`} className='navbar-brand'>
                       <span className='dig'>Digi</span>
                       <img src={require('../images/logo2.jpg')} alt='' className=''/>
                   </a>
