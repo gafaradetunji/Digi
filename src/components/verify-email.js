@@ -25,7 +25,7 @@ const VerifyEmail = () => {
                 <input type='number' placeholder='Input OTP recieved' name='location' className='form-control reg-input'/>
               </div>
               <p className='reg-p'>Did not get OTP after 10 minute  <a href='#top' className='reg-log'>RESEND</a></p>
-              <button onClick={() => {navigate('/newpass')}} className='form-control join forgot-btn'>Continue</button>
+              <button onClick={() => {navigate('/login')}} className='form-control join forgot-btn'>Continue</button>
             </form>
             <p className='text-center reg-p'>Don’t have an account yet?  <a href='/register' className='reg-log'>Sign Up here</a></p>
             <footer className='reg-footer w-100 text-center'>© copyright 2023 Digi</footer>
