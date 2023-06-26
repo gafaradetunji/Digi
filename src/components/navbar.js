@@ -31,8 +31,6 @@ const NavBar = () => {
 
     const hideBuildFunc = () => {
         setShowElement(!showElement);
-        // const element = document.querySelector('.ul-inner-accordion')
-        // element.classList.add('hide-inner-cat')
     }
 
     return(
@@ -44,7 +42,7 @@ const NavBar = () => {
                 <button onClick={showCat} className="navbar-toggler toggle-on" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
-                <a className="navbar-brand" href={`/`}>DIGI<img src={require('../images/logo2.jpg')} alt='' /></a>
+                <a className="navbar-brand" href={`/`}><span className='dig'>DIGI</span><img src={require('../images/logo2.jpg')} alt='' className='img-register'/></a>
             </div>
             {showCategory && (
                 
@@ -62,71 +60,16 @@ const NavBar = () => {
                             <span className='accordion-span'>Electrical Products</span>
                         </div>
                         </Accordion.Header>
-                    <Accordion.Body>
+                        <Accordion.Body>
                         <ul>
-                        <div className={`ul-inner-accordion ${ showElement ? 'hide-inner-cat' : 'show-inner-cat' }`}>
+                          <div className={`ul-inner-accordion ${ showElement ? 'hide-inner-cat' : 'show-inner-cat' }`}>
                             <button className='mb-5 back-arrow' onClick={hideBuildFunc}><img src={require('../images/back-arrow.jpg')} alt='' /></button>
-                            <Accordion className='pt-3 pb-3' flush>
-                                <Accordion.Item>
-                                <Accordion.Header href='#top'>Building Materials</Accordion.Header>
-                                <Accordion.Body>
-                                    <ul>
-                                        <li><a href='#top'>Computers and accessories</a></li>
-                                        <li><a href='#top'>Phone and accessories</a></li>
-                                        <li><a href='#top'>Solar Pannels</a></li>
-                                    </ul>
-                                </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-                            <Accordion className='pt-3 pb-3' flush>
-                                <Accordion.Item>
-                                <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
-                                <Accordion.Body>
-                                    <ul>
-                                        <li><a href='#top'>Computers and accessories</a></li>
-                                        <li><a href='#top'>Phone and accessories</a></li>
-                                        <li><a href='#top'>Solar Pannels</a></li>
-                                    </ul>
-                                </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-                            <Accordion className='pt-3 pb-3' flush>
-                                <Accordion.Item>
-                                <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
-                                <Accordion.Body>
-                                    <ul>
-                                        <li><a href='#top'>Computers and accessories</a></li>
-                                        <li><a href='#top'>Phone and accessories</a></li>
-                                        <li><a href='#top'>Solar Pannels</a></li>
-                                    </ul>
-                                </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-                            <Accordion className='pt-3 pb-3' flush>
-                                <Accordion.Item>
-                                <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
-                                <Accordion.Body>
-                                    <ul>
-                                        <li><a href='#top'>Computers and accessories</a></li>
-                                        <li><a href='#top'>Phone and accessories</a></li>
-                                        <li><a href='#top'>Solar Pannels</a></li>
-                                    </ul>
-                                </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-                            <Accordion className='pt-3 pb-3' flush>
-                                <Accordion.Item>
-                                <Accordion.Header href='#top'>Others</Accordion.Header>
-                                <Accordion.Body>
-                                    <ul>
-                                        <li><a href='#top'>Computers and accessories</a></li>
-                                        <li><a href='#top'>Phone and accessories</a></li>
-                                        <li><a href='#top'>Solar Pannels</a></li>
-                                    </ul>
-                                </Accordion.Body>
-                                </Accordion.Item>
-                            </Accordion>
-                        </div>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Building Materials</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Computers and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Phones and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Solar Panels</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href={`/electrical`} >Others</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                          </div>
                         </ul>
                     </Accordion.Body>
                 </Accordion.Item>
@@ -140,68 +83,16 @@ const NavBar = () => {
                             </div>
                             </Accordion.Header>
                         <Accordion.Body>
-                            <ul>
-                            <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Building Materials</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Others</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                            </ul>
+                          <ul>
+                            <div className={`ul-inner-accordion ${ showElement ? 'hide-inner-cat' : 'show-inner-cat' }`}>
+                              <button className='mb-5 back-arrow' onClick={hideBuildFunc}><img src={require('../images/back-arrow.jpg')} alt='' /></button>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Building Materials</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Computers and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Phones and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Solar Panels</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Others</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            </div>
+                        </ul>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
@@ -214,68 +105,16 @@ const NavBar = () => {
                             </div>
                             </Accordion.Header>
                         <Accordion.Body>
-                            <ul>
-                            <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Building Materials</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Others</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                            </ul>
+                        <ul>
+                          <div className={`ul-inner-accordion ${ showElement ? 'hide-inner-cat' : 'show-inner-cat' }`}>
+                            <button className='mb-5 back-arrow' onClick={hideBuildFunc}><img src={require('../images/back-arrow.jpg')} alt='' /></button>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Building Materials</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Computers and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Phones and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Solar Panels</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Others</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                          </div>
+                        </ul>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
@@ -288,68 +127,16 @@ const NavBar = () => {
                             </div>
                             </Accordion.Header>
                         <Accordion.Body>
-                            <ul>
-                            <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Building Materials</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Others</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                            </ul>
+                          <ul>
+                            <div className={`ul-inner-accordion ${ showElement ? 'hide-inner-cat' : 'show-inner-cat' }`}>
+                              <button className='mb-5 back-arrow' onClick={hideBuildFunc}><img src={require('../images/back-arrow.jpg')} alt='' /></button>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Building Materials</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Computers and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Phones and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Solar Panels</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Others</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            </div>
+                          </ul>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
@@ -370,66 +157,14 @@ const NavBar = () => {
                         </Accordion.Header>
                     <Accordion.Body>
                         <ul>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Building Materials</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Others</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
+                          <div className={`ul-inner-accordion ${ showElement ? 'hide-inner-cat' : 'show-inner-cat' }`}>
+                            <button className='mb-5 back-arrow' onClick={hideBuildFunc}><img src={require('../images/back-arrow.jpg')} alt='' /></button>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Building Materials</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Computers and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Phones and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Solar Panels</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Others</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                          </div>
                         </ul>
                     </Accordion.Body>
                 </Accordion.Item>
@@ -443,101 +178,50 @@ const NavBar = () => {
                             </div>
                             </Accordion.Header>
                         <Accordion.Body>
-                            <ul>
-                            <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Building Materials</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Computers and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Phone and accessories</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Solar Pannels</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                        <Accordion flush>
-                            <Accordion.Item>
-                              <Accordion.Header href='#top'>Others</Accordion.Header>
-                              <Accordion.Body>
-                                <ul>
-                                    <li><a href='#top'>Computers and accessories</a></li>
-                                    <li><a href='#top'>Phone and accessories</a></li>
-                                    <li><a href='#top'>Solar Pannels</a></li>
-                                </ul>
-                              </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                            </ul>
+                          <ul>
+                            <div className={`ul-inner-accordion ${ showElement ? 'hide-inner-cat' : 'show-inner-cat' }`}>
+                              <button className='mb-5 back-arrow' onClick={hideBuildFunc}><img src={require('../images/back-arrow.jpg')} alt='' /></button>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Building Materials</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Computers and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Phones and Accessories</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Solar Panels</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><a href='#top' >Others</a><img src={require('../images/forward.jpg')} alt='' /></li>
+                            </div>
+                          </ul>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>
             </ul>
 
-            <div className='categoty-login'>
-                <button className='reg-category' onClick={() => {navigate('/register')}}>Sign in | Register</button>
+            <div className='categoty-login mt-4' style={{ background: '#EFF2F4', width: '100%'}}>
+                <button style={{ height: '100%', border: 'none', marginLeft: '16px', marginBottom: '10px', fontSize: '16px'}} className='mt-3 reg-category' onClick={() => {navigate('/register')}}>Sign in | Register</button>
             </div>
             </nav>
             </div>
             )}
-            <div className='mobile-cart'>
-              <img src={require('../images/cart.jpg')} alt='' />
-              <img src={require('../images/auth-user.jpg')} alt='' />
+            <div className='auth-nav'>
+              <img src={require('../images/cart.jpg')} alt='' className='nav-cart'/>
+              <img src={require('../images/auth-user.jpg')} alt='' className='user-nav'/>
             </div>
-                <div className='nav mobile-nav'>
-                            <ul className='ul-nav nav d-flex align-items-center justify-content-between'>
-                                <li className='nav-item'><a className='nav-link nav-nav active' aria-current="true" href={`/`}>Home</a></li>
-                                <li className='nav-item'><a className='nav-link nav-nav' href={`/electrical`}>X-Services</a></li>
-                                <li className='nav-item'><a className='nav-link nav-nav' href='#top'>Contact Us</a></li>
-                            </ul>
-                        </div>
-                        <div className='auth mobile-nav'>
-                            <button className='btn sign m-2' onClick={() => {navigate('/register')}}>Sign Up</button>
-                            <button className='btn login m-2' onClick={() => {navigate('/login')}}>Login Now</button>
-                        </div>
+            <div className='nav mobile-nav'>
+                <ul className='ul-nav nav d-flex align-items-center justify-content-between'>
+                    <li className='nav-item'><a className='nav-link nav-nav active' aria-current="true" href={`/`}>Home</a></li>
+                    <li className='nav-item'><a className='nav-link nav-nav' href={`/electrical`}>X-Services</a></li>
+                    <li className='nav-item'><a className='nav-link nav-nav' href='#top'>Contact Us</a></li>
+                </ul>
+            </div>
+            <div className='auth mobile-nav'>
+                <button className='btn sign m-2' onClick={() => {navigate('/register')}}>Sign Up</button>
+                <button className='btn login m-2' onClick={() => {navigate('/login')}}>Login Now</button>
+            </div>
         </div>
         </nav>
             <Outlet />
-            <footer className='footer row p-5'>
-                <div className='footer-logo col-sm-6'>
-                <img src={require('../images/logo2.jpg')} alt='' />
-                    <p>Download Digi Mobile App</p>
+            <footer className='footer p-2'>
+                <div className='d-flex align-items-center justify-content-center'>
+                <div className='footer-logo'>
+                  <img src={require('../images/logo2.jpg')} alt='' />
+                    <p className='mt-3'>Download Digi Mobile App</p>
                     <div className='footer-mobile ios d-flex align-items-center justify-content-center'>
                         <Ios />
                         <h4>iOS</h4>
@@ -547,25 +231,28 @@ const NavBar = () => {
                         <h4>Android</h4>
                     </div>
                 </div>
-                <div className='about-footer col-sm-2'>
-                    <p><a href='#top'>About Digi</a></p>
-                    <p><a href='#top'>Manufacturers</a></p>
-                    <p><a href='#top'>Careers</a></p>
+                <div className='footer-legal'>
+                    <p><a href='#top' className='mt-3'>Legal</a></p>
+                    <p><a href='#top' className='mt-3'>Privacy policy</a></p>
+                    <p><a href='#top' className='mt-3'>Terms of use</a></p>
+                    <p><a href='#top' className='mt-3'>Report Abuse</a></p>
+                    <p><a href='#top' className='mt-3'>Avoid scams & fraud</a></p>
+                    <p><a href='#top' className='mt-3'>System status</a></p>
                 </div>
-                <div className='footer-legal col-sm-2'>
-                    <p><a href='#top'>Legal</a></p>
-                    <p><a href='#top'>Privacy policy</a></p>
-                    <p><a href='#top'>Terms of use</a></p>
-                    <p><a href='#top'>Report Abuse</a></p>
-                    <p><a href='#top'>Avoid scams & fraud</a></p>
-                    <p><a href='#top'>System status</a></p>
+                <div className='about-footer'>
+                    <p><a href='#top' className='mt-3'>About Digi</a></p>
+                    <p><a href='#top' className='mt-3'>Manufacturers</a></p>
+                    <p><a href='#top' className='mt-3'>Careers</a></p>
                 </div>
-                <div className='socials col-sm-2'>
-                    <p><a href='#top'>Social Media</a></p>
-                    <p><a href='#top'><Facebook /></a></p>
-                    <p><a href='#top'><Instagram /></a></p>
-                    <p><a href='#top'><Twitter /></a></p>
-                    <p><a href='#top'><Linkedin /></a></p>
+                </div>
+                <div className='socials' style={{float: 'right', marginRight: '50px'}}>
+                    <p className='mt-3'>Social Media</p>
+                    <div className='d-flex align-items center justfy-content-center'>
+                    <p><a href='#top' className='m-2'><Facebook /></a></p>
+                    <p><a href='#top' className='m-2'><Instagram /></a></p>
+                    <p><a href='#top' className='m-2'><Twitter /></a></p>
+                    <p><a href='#top' className='m-2'><Linkedin /></a></p>
+                    </div>
                 </div>
             </footer>
             <div className='copy text-center'>

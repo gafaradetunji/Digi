@@ -1,30 +1,29 @@
-import Carousel from 'react-bootstrap/Carousel'
+// import Carousel from 'react-bootstrap/Carousel'
 import Accordion from 'react-bootstrap/Accordion'
-import { ReactComponent as Search } from "../images/search.svg"
 import { ReactComponent as Drop } from "../images/Vector.svg"
 import { ReactComponent as Location } from "../images/location.svg"
 import { ReactComponent as Bike } from "../images/bike.svg"
 import { ReactComponent as Auto } from "../images/auto.svg"
 import { ReactComponent as Settings } from "../images/settings.svg"
 
-const featured_data = [
-  {
-    image: require('../images/tesla.jpg'),
-    description: 'Best Car Parts Deal'
-  },
-  {
-    image: require('../images/tesla.jpg'),
-    description: 'Best Car Parts Deal'
-  },
-  {
-    image: require('../images/tesla.jpg'),
-    description: 'Best Car Parts Deal'
-  },
-  {
-    image: require('../images/tesla.jpg'),
-    description: 'Best Car Parts Deal'
-  }
-]
+// const featured_data = [
+//   {
+//     image: require('../images/tesla.jpg'),
+//     description: 'Best Car Parts Deal'
+//   },
+//   {
+//     image: require('../images/tesla.jpg'),
+//     description: 'Best Car Parts Deal'
+//   },
+//   {
+//     image: require('../images/tesla.jpg'),
+//     description: 'Best Car Parts Deal'
+//   },
+//   {
+//     image: require('../images/tesla.jpg'),
+//     description: 'Best Car Parts Deal'
+//   }
+// ]
 
 const sidePhoto = [
   {
@@ -43,6 +42,7 @@ const sidePhoto = [
 
 export const topDeals = [
   {
+    id: 1,
     cut: 10,
     image: require('../images/aircon.jpg'),
     name: 'Air conditioning system',
@@ -51,6 +51,7 @@ export const topDeals = [
     realPrice: 22,
   },
   {
+    id: 2,
     cut: 10,
     image: require('../images/transformer.jpg'),
     name: '2kva Electrical Transformer',
@@ -59,6 +60,7 @@ export const topDeals = [
     realPrice: 22,
   },
   {
+    id: 3,
     cut: 10,
     image: require('../images/speaker.jpg'),
     name: 'Portable Loud Speakers',
@@ -67,6 +69,7 @@ export const topDeals = [
     realPrice: 22,
   },
   {
+    id: 4,
     cut: 10,
     image: require('../images/solar.jpg'),
     name: 'Solar Street light',
@@ -75,6 +78,7 @@ export const topDeals = [
     realPrice: 22,
   },
   {
+    id: 5,
     cut: 10,
     image: require('../images/speaker.jpg'),
     name: 'Portable Loud Speakers',
@@ -83,6 +87,7 @@ export const topDeals = [
     realPrice: 22,
   },
   {
+    id: 6,
     cut: 10,
     image: require('../images/aircon.jpg'),
     name: 'Air conditioning system',
@@ -91,6 +96,7 @@ export const topDeals = [
     realPrice: 22,
   },
   {
+    id: 7,
     cut: 10,
     image: require('../images/transformer.jpg'),
     name: '2kva Electrical Transformer',
@@ -99,6 +105,7 @@ export const topDeals = [
     realPrice: 22,
   },
   {
+    id: 8,
     cut: 10,
     image: require('../images/solar.jpg'),
     name: 'Solar Street light',
@@ -310,23 +317,23 @@ const plumbing = [
 
 export const popularBrands = [
   {
-    image: require('../images/car-brand.jpg'),
+    image: require('../images/volvo.jpg'),
     name: 'Volvo',
   },
   {
     image: require('../images/car-brand.jpg'),
+    name: 'Merck',
+  },
+  {
+    image: require('../images/volvo.jpg'),
     name: 'Volvo',
   },
   {
     image: require('../images/car-brand.jpg'),
-    name: 'Volvo',
+    name: 'Merck',
   },
   {
-    image: require('../images/car-brand.jpg'),
-    name: 'Volvo',
-  },
-  {
-    image: require('../images/car-brand.jpg'),
+    image: require('../images/volvo.jpg'),
     name: 'Volvo',
   },
 ]
@@ -370,35 +377,34 @@ export const similar = [
   },
 ]
 
-
 const Home = () => {
-
+  
     return(
         <main>
-          <form className='mobile-form'>
-            <Search className='search-icon'/> 
-            <input type='text' className='' placeholder='Search Digistore'/>
+          <form className='mobile-search'>
+            <img src={require('../images/search.jpg')} alt='' className='nav-search'/> 
+            <input type='text' className='input-nav' placeholder='Search Digistore'/>
           </form>
           <div className='home-mobile'>
-          <div className='home-div w-100 d-flex flex-row m-auto align-items-center justify-content-center'>
-            <div className='top-home w-50 text-center'>
-              <h1>Yorem Ipsum dolor sit amet</h1>
-              <form className='search mt-3 d-flex align-items-center flex-row w-100 align-self-center'>
-                <Search className='search-icon'/> 
-                <input type='text' className='' placeholder='Search Digistore'/>
-                <div className='icon-div h-100 d-flex align-items-center justify-content-center'>
-                  <Location />
-                  <p className='text-center anywhere'>Anywhere</p>
-                  <Drop />
-                </div>
-              </form>
+            <div className='home-div w-100 d-flex flex-row m-auto align-items-center justify-content-center'>
+              <div className='top-home w-50 text-center'>
+                <h1>Yorem Ipsum dolor sit amet</h1>
+                <form className='search mt-3 d-flex align-items-center flex-row w-100 align-self-center'>
+                  <img src={require('../images/search.jpg')} alt='' className='search-icon'/> 
+                  <input type='text' className='' placeholder='Search Digistore'/>
+                  <div className='icon-div h-100 d-flex align-items-center justify-content-center'>
+                    <Location />
+                    <p className='text-center anywhere'>Anywhere</p>
+                    <Drop />
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
           </div>
 
           {/**************************CATEGORIES************** */}
 
-          <div className='categories row'>
+          <div className='categories d-flex align-items-center justify-content-between'>
             <div className='site-category mt-3 col-sm-3'>
                 <h3 className=''>Categories</h3>
                 <ul className="w-100">
@@ -480,14 +486,15 @@ const Home = () => {
                     </Accordion>
                 </ul>
             </div>
-            <div className='w-50 pt-5 col-sm-6'>
-            <img src={require('../images/cat-pic.jpg')} alt='...' className='sale mobile-pic' />
+            
+            <div className=''>
+              <img src={require('../images/cat-pic.jpg')} alt='...' className='sale' />
             </div>
-            <div className='side-photo col-sm-3'>
-              <div className='w-25 mt-5 d-flex flex-column align-items-center justify-content-between'>
+            <div className='side-photo'>
+              <div className='w-25 mt-2 d-flex flex-column align-items-center justify-content-between'>
                 { sidePhoto.map(item => {
                   return(
-                    <div className="mt-2 absolute-img"><img src={item.image} alt='...'/><span className='img-top'>{item.description}</span></div>
+                    <div className="mt-2 absolute-img"><img src={item.image} alt='...' className='sale-img'/><span className='img-top'>{item.description}</span></div>
                   )
                 })}
               </div>
@@ -502,21 +509,29 @@ const Home = () => {
         <div className='top-deals mt-4'>
             <h1>Top Deals</h1>
             <div className='link d-flex align-items-center justify-content-between'>
-                <a href='#top'>Cheapest Price Ever</a>
-                <a href='#top'>View All</a>
+                <a href='#top' className='cheap-price'>Cheapest Price Ever</a>
+                <a href='#top' className='view-all'>View All</a>
             </div>
-         <div className='deal-card w-100 mt-4 carousel slide' id='myCarousel' data-ride='carousel'>
+         <div className='deal-card w-100 mt-4'>
            { topDeals.map(item => {
             return(
-              <div className='card-container m-3'>
+              <div className='mobile-card m-3'>
                   <p className='discount'>-{item.cut}%</p>
                   <img src={item.image} alt='...' className='icon'/>
                   <h3>{item.name}</h3>
-                  <p>{item.description}</p>
+                  { window.innerWidth <= 600 ? 
+                    <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
+                    :<p className='desc'>{item.description}</p> 
+                  }
                   <div className='price-container d-flex align-items-center justify-content-between'>
+                    <div className='d-flex align-items-center'>
                       <p className='price'>₹{item.dPrice}</p>
                       <p className='price'>₹{item.realPrice}</p>
-                      <button className='btn details'>View Details</button>
+                    </div>
+                      { window.innerWidth <= 600 ? 
+                        <button className='btn details'>View</button>
+                        : <button className='btn details'>View Details</button>
+                      }
                   </div>
               </div>
             )
@@ -528,92 +543,74 @@ const Home = () => {
 
 
         <div className='top-deals mt-4'>
-            <h1>Chemical Products</h1>
-            <div className='link d-flex align-items-center justify-content-between'>
-                <a href='#top'>View All</a>
+            <h1 className='h1'>Chemical Products</h1>
+            <div className='link link-all'>
+                <a href='#top' className='view-all'>View All</a>
             </div>
          <div className='deal-card w-100 mt-4'>
            { chemicals.map(item => {
             return(
-              <div className='card-container m-3'>
+              <div className='mobile-card m-3'>
                   <p className='discount'>-{item.cut}%</p>
-                  <img src={item.image} alt='...' />
+                  <img src={item.image} alt='...' className='icon'/>
                   <h3>{item.name}</h3>
-                  <p>{item.description}</p>
+                  { window.innerWidth <= 600 ? 
+                    <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
+                    :<p className='desc'>{item.description}</p> 
+                  }
                   <div className='price-container d-flex align-items-center justify-content-between'>
+                    <div className='d-flex align-items-center'>
                       <p className='price'>₹{item.dPrice}</p>
                       <p className='price'>₹{item.realPrice}</p>
-                      <button className='btn details'>View Details</button>
+                    </div>
+                    { window.innerWidth <= 600 ? 
+                        <button className='btn details'>View</button>
+                        : <button className='btn details'>View Details</button>
+                    }
                   </div>
               </div>
             )
            })}
          </div>
          {/* /************************FEATURED MANUFACTURERS****************  */}
-
-       <Carousel className='carousel mt-5'>
-            <h1>Featured Manufacturers</h1>
-            { featured_data.map( item => {
-              return(
-                <Carousel.Item className='carousel-img'>
-                    <img src={item.image} alt='oookkkkk' className='req-img d-block'/>
-                    <Carousel.Caption>
-                      <p className='text-center carousel-p'>{item.description}</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-              )
-            })}
-         </Carousel>
-            <div className='changes d-flex align-items-center justify-content-center mt-5'>
-                <div className='active-changes active m-2'></div>
-                <div className='active-changes m-2'></div>
-                <div className='active-changes m-2'></div>
-                <div className='active-changes m-2'></div>
-              <div className='clear'></div>
-            </div>
-
-
-         {/* <div className='carousel mt-5'>
-            <h1>Featured Manufacturers</h1>
-            <div className='carousel-img'>
-                <img src={require('../images/tesla.jpg')} alt='' className='req-img'/>
-                  <p className='text-center'>Best Car Parts Deal</p>
-            </div>
-            <div className='changes d-flex align-items-center justify-content-center mt-5'>
-                <div className='active-changes active m-2'></div>
-                <div className='active-changes m-2'></div>
-                <div className='active-changes m-2'></div>
-                <div className='active-changes m-2'></div>
-              <div className='clear'></div>
-            </div>
-         </div> */}
-
+         <div className='feature'>
+           <h1 className='feature-header'>Featured Manufacturers</h1>
+           <div className='feature-image'>
+            <img src={require('../images/tesla.jpg')} alt='' className='feature-img'/>
+            <p className='feature-p'>Cool Exotic Rides</p>
+           </div>
+           <div className='actives'>
+            <span className='box active'></span>
+            <span className='box'></span>
+            <span className='box'></span>
+            <span className='box'></span>
+           </div>
+         </div>
 
          {/* /******************************POPULAR BRANDS******************** * */}
          <div className='popular-brand w-100 mb-5'>
             <div className='top-brand d-flex align-items-center justify-content-between'>
-                <h1>Popular Brand Products</h1>
-                <a href='#top'>View All</a>
+                <h1>Popular Products</h1>
+                <a href='#top' className='popular-a'>View All</a>
             </div>
-            <div className='brands w-100 mt-4'>
+            <div className='brands w-100 mt-4 d-flex align-items-center justify-content-center'>
               { popularBrands.map(item => {
               return(
-                <div className='brand-card text-center m-4 col-sm-3'>
-                    <div className='brands-img p-4'>
-                      <img src={item.image} alt='...' />
-                      {/* <CarBrand /> */}
+                <div className='brand-card text-center col-sm-3'>
+                    <div className='brands-img'>
+                      <img src={item.image} alt='...' className='brands-image'/>
                     </div>
-                    <div className='brand-inner mt-3'>
-                        <h3 className='mt-4'>{item.name}</h3>
-                        <div className='automobile d-flex align-items-center justify-content-center'>
+                    <div className='brand-inner'>
+                        <h3 className=''>{item.name}</h3>
+                        <div className='automobile d-flex align-items-center'>
                           <Auto />
                           <h4 className=''>Automobile</h4>
                         </div>
-                        <div className='automobile d-flex align-items-center justify-content-center'>
+                        <div className='automobile d-flex align-items-center'>
                           <Settings />
                           <h4 className=''>Parts</h4>
                         </div>
-                        <div className='automobile d-flex align-items-center justify-content-center'>
+                        <div className='automobile d-flex align-items-center'>
                           <Bike />
                           <h4 className=''>Bicycle</h4>
                         </div>
@@ -629,8 +626,8 @@ const Home = () => {
          {/***************************AFTER BRAND****************** */}
 
 
-         <div className='container m-auto after-brand row'>
-            <div className='first-after col-sm-3'>
+         <div className='m-auto after-brand'>
+            <div className='first-after col-sm-3 d-flex align-items-center justify-content-center'>
                 <h3>Get the best Deals and offers from Digi Store</h3>
                 <div className='time d-flex'>
                     <div className='date bg-dark'><p className='p-brand text-center m-auto'>04<p className='p-tag text-center m-auto'>Days</p></p></div>
@@ -639,7 +636,32 @@ const Home = () => {
                     <div className='date bg-dark'><p className='p-brand text-center m-auto'>56<p className='p-tag text-center m-auto'>Secs</p></p></div>
                 </div>
             </div>
-            <div className='second-after col-sm-8 text-center row'>
+            <div className='second-after col-sm-8 text-center'>
+                <div className='closet col-sm-3'>
+                    <img src={require('../images/closet.jpg')} alt='closet' />
+                    <p>Water Closet</p>
+                    <span className='span'>-25%</span>
+                </div>
+                <div className='closet col-sm-3'>
+                    <img src={require('../images/closet.jpg')} alt='closet' />
+                    <p>Water Closet</p>
+                    <span className='span'>-25%</span>
+                </div>
+                <div className='closet col-sm-3'>
+                    <img src={require('../images/closet.jpg')} alt='closet' />
+                    <p>Water Closet</p>
+                    <span className='span'>-25%</span>
+                </div>
+                <div className='closet col-sm-3'>
+                    <img src={require('../images/closet.jpg')} alt='closet' />
+                    <p>Water Closet</p>
+                    <span className='span'>-25%</span>
+                </div>
+                <div className='closet col-sm-3'>
+                    <img src={require('../images/closet.jpg')} alt='closet' />
+                    <p>Water Closet</p>
+                    <span className='span'>-25%</span>
+                </div>
                 <div className='closet col-sm-3'>
                     <img src={require('../images/closet.jpg')} alt='closet' />
                     <p>Water Closet</p>
@@ -666,51 +688,98 @@ const Home = () => {
          <div className='top-deals mt-4'>
             <h1>Plumbing Products</h1>
             <div className='link d-flex align-items-center justify-content-between'>
-                <a href='#top'>Cheapest Price Ever</a>
-                <a href='#top'>View All</a>
+                <a href='#top' className='cheap-price'>Cheapest Price Ever</a>
+                <a href='#top' className='view-all'>View All</a>
             </div>
-         <div className='deal-card w-100 mt-4'>
+         <div className='deal-card mt-4'>
             { plumbing.map(item => {
               return(
-              <div className='card-container m-3'>
+              <div className='mobile-card m-3'>
                   <p className='discount'>-{item.cut}%</p>
-                  <img src={item.image} alt='' />
+                  <img src={item.image} alt='' className='icon'/>
                   <h3>{item.name}</h3>
-                  <p>{item.description}</p>
+                  { window.innerWidth <= 600 ? 
+                    <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
+                    :<p className='desc'>{item.description}</p> 
+                  }
                   <div className='price-container d-flex align-items-center justify-content-between'>
                       <p className='price'>₹{item.dPrice}</p>
                       <p className='price'>₹{item.realPrice}</p>
-                      <button className='btn details'>View Details</button>
-                  </div>
+                      { window.innerWidth <= 600 ? 
+                        <button className='btn details'>View</button>
+                        : <button className='btn details'>View Details</button>
+                      }
+                      </div>
               </div>
               )
             })}
          </div>
          </div>
          {/**************************FEATURED PRODUCTS********************** */}
-         <div className='top-deals mt-4'>
-            <h1>Featured Products</h1>
-            <div className='link d-flex align-items-center justify-content-between'>
-                <a href='#top'>Cheapest Price Ever</a>
-                <a href='#top'>View All</a>
+         <div className='popular-brand w-100 mb-5 leave'>
+            <div className='top-brand d-flex align-items-center justify-content-between'>
+                <h1>Chemical Products</h1>
+                <a href='#top' className='popular-a'>View All</a>
+            </div>
+            <div className='brands w-100 mt-4 d-flex align-items-center justify-content-center'>
+              { popularBrands.map(item => {
+              return(
+                <div className='brand-card text-center col-sm-3'>
+                    <div className='brands-img'>
+                      <img src={item.image} alt='...' className='brands-image'/>
+                    </div>
+                    <div className='brand-inner'>
+                        <h3 className=''>{item.name}</h3>
+                        <div className='automobile d-flex align-items-center'>
+                          <Auto />
+                          <h4 className=''>The Madisson</h4>
+                        </div>
+                        <div className='automobile d-flex align-items-center'>
+                          <Settings />
+                          <h4 className=''>7 million</h4>
+                        </div>
+                        <div className='automobile d-flex align-items-center'>
+                          <Bike />
+                          <h4 className=''>$900 per container</h4>
+                        </div>
+                        <button className='btn details'>View Product Details</button>
+                    </div>
+                </div>
+                    )
+                  })}
+            </div>
+         </div>
+         </div>
+
+         <div className='top-deals mt-4 owambe'>
+            <h1 className='h1'>Featured Products</h1>
+            <div className='link link-all'>
+                <a href='#top' className='view-all'>View All</a>
             </div>
          <div className='deal-card w-100 mt-4'>
-            { featured.map(item => {
-                return(
-                  <div className='card-container m-3'>
-                      <p className='discount'>-{item.cut}%</p>
-                      <img src={item.image} alt='' />
-                      <h3>{item.name}</h3>
-                      <p>{item.description}</p>
-                      <div className='price-container d-flex align-items-center justify-content-between'>
-                          <p className='price'>₹{item.dPrice}</p>
-                          <p className='price'>₹{item.realPrice}</p>
-                          <button className='btn details'>View Details</button>
-                      </div>
-                   </div>
-                  )
-                })}
-            </div>
+           { featured.map(item => {
+            return(
+              <div className='mobile-card m-3'>
+                  <p className='discount'>-{item.cut}%</p>
+                  <img src={item.image} alt='...' className='icon'/>
+                  <h3>{item.name}</h3>
+                  { window.innerWidth <= 600 ? 
+                    <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
+                    :<p className='desc'>{item.description}</p> 
+                  }
+                  <div className='price-container d-flex align-items-center justify-content-between'>
+                    <div className='d-flex align-items-center'>
+                      <p className='price'>₹{item.dPrice}</p>
+                      <p className='price'>₹{item.realPrice}</p>
+                    </div>
+                    { window.innerWidth <= 600 ? 
+                        <button className='btn details'>View</button>
+                        : <button className='btn details'>View Details</button>
+                    }
+                  </div>
+              </div>
+            )
+           })}
          </div>
          </div>
         </main>

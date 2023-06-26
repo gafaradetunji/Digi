@@ -10,10 +10,11 @@ const Electrical = () => {
     return(
         <main>
           <div className='row'>
-            <div className="elect-categories col-sm-3">
-                <h3>Categories</h3>
+          <div className='categories row'>
+            <div className='site-category mt-3 col-sm-3'>
+                <h3 className=''>Categories</h3>
                 <ul className="w-100">
-                    <Accordion>
+                <Accordion>
                         <Accordion.Item eventKey='0' className=''>
                             <Accordion.Header className='accordion-item'>
                                 <div className='accordion-header'>
@@ -110,7 +111,7 @@ const Electrical = () => {
                 <div className='deal-card w-100 text-center m-3 row'>
                     { topDeals.map(item => {
                         return(
-                            <div className='card-container m-3 col-sm-3'>
+                            <div className='card-container m-3 col-sm-3 mobile-card-container' key={item.id}>
                                 <p className='discount'>-{item.cut}%</p>
                                 <img src={item.image} alt='...' className='icon'/>
                                 <h3>{item.name}</h3>
@@ -123,6 +124,24 @@ const Electrical = () => {
                              </div>
                         )
                     })}
+                </div>
+          </div>
+          </div>
+          <div className='w-100 m-5'>
+            <div className='w-100 d-flex mb-4 align-items-center justify-content-between'>
+                <h1>You may also like</h1>
+                <a href='#top'>View All</a>
+            </div>
+            <div className='also-like similar d-flex align-content-center justify-content-between'>
+                { topDeals.map(item => {
+                    return(
+                        <div className='mobile-card p-2 card-container m-3 col-sm-3'>
+                            <img src={require('../images/aircon.jpg')} alt='...' className='icon'/>
+                            <h3>$10.30</h3>
+                            <p>Solid mini deep air conditioning system</p>
+                        </div>
+                    )
+                })}
                 </div>
           </div>
 

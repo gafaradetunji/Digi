@@ -1,4 +1,7 @@
-const NewPassword = () => {
+import { useNavigate } from 'react-router-dom'
+
+const VerifyEmail = () => {
+  const navigate = useNavigate()
     return(
         <main className='h-100'>
           <nav className='navbar navbar-expand-lg'>
@@ -14,26 +17,19 @@ const NewPassword = () => {
             </div>
           </nav>
             <div className='get-started text-center'>
-                <p className='p-start'>Set New Password</p>
-                <p className='forgot-text'>Create a new password at least 8 characters long with letters, special characters and numbers</p>
+                <p className='p-start'>Verify Email</p>
+                <p className='forgot-text'>An OTP has been sent to your mail, input the OTP below</p>
             </div>
-            <form className='pt-5 mb-3 register-form'>
+            <form className='mb-3 register-form pt-5'>
               <div className='each-reg'>
-                <label class="form-label">New Password</label>
-                <input type='text' placeholder='Type In New Password' name='location' className='form-control reg-input'/>
+                <input type='number' placeholder='Input OTP recieved' name='location' className='form-control reg-input'/>
               </div>
-              <div className='each-reg'>
-                <label class="form-label">Confirm Password</label>
-                <input type='text' placeholder='Re-Type Password' name='location' className='form-control reg-input'/>
-              </div>
-              <div className='reg-condition'>
-                <input type='checkbox' className='checkbox'/><span>Log me out of other devices</span>
-              </div>
-              <button className='form-control join new-btn'>Log In</button>
+              <p className='reg-p'>Did not get OTP after 10 minute  <a href='#top' className='reg-log'>RESEND</a></p>
+              <button onClick={() => {navigate('/newpass')}} className='form-control join forgot-btn'>Continue</button>
             </form>
             <p className='text-center reg-p'>Don’t have an account yet?  <a href='/register' className='reg-log'>Sign Up here</a></p>
             <footer className='reg-footer w-100 text-center'>© copyright 2023 Digi</footer>
         </main>
     )
 }
-export default NewPassword
+export default VerifyEmail
