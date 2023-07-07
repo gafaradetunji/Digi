@@ -6,11 +6,12 @@ import Login from './components/login';
 import ForgotPass from './components/forgot-pass';
 import Electrical from './components/electrical';
 import ForgotOTP from './components/forgot-otp';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes,  } from 'react-router-dom';
 import VerifyEmail from './components/verify-email';
 import './scss/app.scss';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import NewPassword from './components/newPassword';
+import ProductPage from './components/productDetails'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         </Route>
         <Route path='/electrical' element={<Nav2 />}>
           <Route path="/electrical" element={<Electrical />} />
+          <Route path="/electrical/product/:id" element={<ProductPage />} />
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
