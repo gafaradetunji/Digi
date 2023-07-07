@@ -10,8 +10,8 @@ const MobileProduct = () => {
                     <img src={require('../images/back-track.jpg')} alt='' className='back-img'/>
                 </a>
                 <Breadcrumbs aria-label="breadcrumb">
-                    <Link underline="hover" color="inherit" href="/">
-                    Electrical Products
+                    <Link underline="hover" color="inherit" href={`/electrical`}>
+                        Electrical Products
                     </Link>
                     {/* <Typography color="text.primary" className='topography'>Others</Typography> */}
                 </Breadcrumbs>
