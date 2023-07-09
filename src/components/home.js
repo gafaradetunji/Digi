@@ -8,7 +8,7 @@ import { ReactComponent as Auto } from "../images/auto.svg"
 import { ReactComponent as Settings } from "../images/settings.svg"
 import { useRef } from 'react'
 import Categories from './categories'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const topDeals = [
   {
@@ -382,7 +382,7 @@ const sidePhoto = [
 ]
 
 const Home = () => {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const sliderRef = useRef(null);
 
   const next = () => {
@@ -466,8 +466,8 @@ const Home = () => {
                       <p className='price'>₹{item.realPrice}</p>
                     </div>
                       { window.innerWidth <= 600 ? 
-                        <button className='btn details'>View</button>
-                        : <button className='btn details'>View Details</button>
+                        <button className='btn details' onClick={() => { navigate(`product/${item.id}`)}}>View</button>
+                        : <button className='btn details' onClick={() => { navigate(`product/${item.id}`)}}>View Details</button>
                       }
                   </div>
               </div>

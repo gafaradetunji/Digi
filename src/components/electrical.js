@@ -1,9 +1,9 @@
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link'
+// import Link from '@mui/material/Link'
 import { topDeals } from './home'
 import Categories from './categories'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SimilarProduct from './similarProduct';
 import ElectricMobile from './electrical-mobile';
 
@@ -24,7 +24,7 @@ const navigate = useNavigate()
                 </Link>
                 <div className='indicators d-flex align-items-center justify-content-between mt-4 mb-5'>
                     <Breadcrumbs aria-label="breadcrumb" separator="›">
-                        <Link underline="hover" color="inherit" href="/">
+                        <Link underline="hover" style={{ textDecoration: 'none', color: 'grey'}} href="/">
                         Electrical Products
                         </Link>
                         <Typography color="text.primary" className='topography'>Others</Typography>
