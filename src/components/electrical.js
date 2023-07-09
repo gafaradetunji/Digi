@@ -18,10 +18,10 @@ const navigate = useNavigate()
           <div className='categories row'>
             <Categories />
             <div className='all-view col-xl-8'>
-                <a href={`/`} className='back-track d-flex align-items-center justify-content-between'>
+                <Link to={`/`} className='back-track d-flex align-items-center justify-content-between'>
                     <img src={require('../images/back-track.jpg')} alt='' className='back-img'/>
                     <p>Back</p>
-                </a>
+                </Link>
                 <div className='indicators d-flex align-items-center justify-content-between mt-4 mb-5'>
                     <Breadcrumbs aria-label="breadcrumb" separator="›">
                         <Link underline="hover" color="inherit" href="/">

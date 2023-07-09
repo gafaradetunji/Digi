@@ -1,9 +1,9 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { topDeals } from './home'
 import { useRef, useState } from 'react';
 import Typography from '@mui/material/Typography'
 import Breadcrumbs from '@mui/material/Breadcrumbs'
-import Link from '@mui/material/Link'
+// import Link from '@mui/material/Link'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -53,15 +53,15 @@ const ProductPage = () => {
     return(
         <main className='dynamic-render'>
            <MobileProduct />
-            <a href={`/electrical`} className='back-track d-flex align-items-center'>
+            <Link to={`/electrical`} className='back-track d-flex align-items-center'>
                 <img src={require('../images/back-track.jpg')} alt='' className='back-img'/>
                 <p>Back</p>
-            </a>
+            </Link>
             <Breadcrumbs aria-label="breadcrumb" separator="›" className='bread'>
-                <Link underline="hover" color="inherit" href="/">
+                <Link underline="hover" className='mob-anch' to="/">
                 Electrical Products
                 </Link>
-                <Link underline="hover" color="inherit" href="/">
+                <Link underline="hover" className='mob-anch' to="/">
                 others
                 </Link>
                 <Typography color="text.primary">{product.name}</Typography>
@@ -103,30 +103,30 @@ const ProductPage = () => {
                 <img src={product.image} alt='' />
             </div>
             <div className='dynamo-icon'>
-              <a href='#top' className='dynamo-anchor'>
+              <Link to='#top' className='dynamo-anchor'>
                 <span class="material-symbols-outlined icon">
                     favorite
                 </span>
                 Favorite
-              </a>
-              <a href='#top' className='dynamo-anchor'>
+              </Link>
+              <Link to='#top' className='dynamo-anchor'>
                 <span class="material-symbols-outlined icon">
                     share
                 </span>
                 Share
-              </a>
-              <a href='#top' className='dynamo-anchor'>
+              </Link>
+              <Link to='#top' className='dynamo-anchor'>
                 <span class="material-symbols-outlined icon">
                     flag
                 </span>
                 Flag
-              </a>
+              </Link>
             </div>
           </div>
           <div className='prod-details'>
             <div className='prod-anchor'>
-              <button href='#top' className='' onClick={Product}>Product Details</button>
-              <button href='#top' className='' onClick={Company}>Company Profile</button>
+              <button className='' onClick={Product}>Product Details</button>
+              <button className='' onClick={Company}>Company Profile</button>
             </div>
             <div className={`all-in-all row ${ active ? 'show active': 'collapse'}`}>
               <div className='about-product col-sm-8'>

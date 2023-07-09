@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const Register = () => {
   const navigate = useNavigate()
     return(
@@ -6,13 +6,13 @@ const Register = () => {
           <nav className='navbar navbar-expand-lg'>
             <div className='register container-fluid'>
                 <p className='finance'>
-                  <a href={`/`} className='navbar-brand a-register'>
+                  <Link to={`/`} className='navbar-brand a-register'>
                       <span className='dig'>Digi</span>
                       <img src={require('../images/logo2.jpg')} alt='' className='img-register'/>
-                  </a>
+                  </Link>
                 </p>
-                <a href='#top' className='navbar-list'>Be a manufacutrer</a>
-                <a href='#top' className='navbar-list'>Contact Us</a>
+                <Link to='#top' className='navbar-list'>Be a manufacutrer</Link>
+                <Link to='#top' className='navbar-list'>Contact Us</Link>
             </div>
           </nav>
             <div className='get-started text-center'>
@@ -45,7 +45,7 @@ const Register = () => {
               </div>
               <button onClick={() => navigate('/verify-mail')} className='form-control join'>Join Now</button>
             </form>
-            <p className='text-center reg-p'>Already have an account <a href='/login' className='reg-log'>login here</a></p>
+            <p className='text-center reg-p'>Already have an account <Link to='/login' className='reg-log'>login here</Link></p>
             <footer className='reg-footer w-100 text-center'>© copyright 2023 Digi</footer>
         </main>
     )

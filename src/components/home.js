@@ -8,6 +8,7 @@ import { ReactComponent as Auto } from "../images/auto.svg"
 import { ReactComponent as Settings } from "../images/settings.svg"
 import { useRef } from 'react'
 import Categories from './categories'
+// import { useNavigate } from 'react-router-dom';
 
 export const topDeals = [
   {
@@ -381,6 +382,7 @@ const sidePhoto = [
 ]
 
 const Home = () => {
+  // const navigate = useNavigate()
   const sliderRef = useRef(null);
 
   const next = () => {

@@ -1,8 +1,7 @@
 // import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link'
 import { topDeals } from './home'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ElectricMobile = () => {
     const navigate = useNavigate()
@@ -10,11 +9,11 @@ const ElectricMobile = () => {
         <div className='electric-mobile'>
           <div className='d-flex align-items-center justify-content-between'>
             <div className='mobile-elect d-flex align-items-center'>
-                <a href={`/`} className='mob-anch'>
+                <Link to={`/`} className='mob-anch'>
                     <img src={require('../images/back-track.jpg')} alt='' className='back-img'/>
-                </a>
+                </Link>
                 <Breadcrumbs aria-label="breadcrumb">
-                    <Link underline="hover" color="inherit" href="/">
+                    <Link underline="hover" style={{ textDecoration: 'none', color: '#000'}} to="/">
                     Electrical Products
                     </Link>
                     {/* <Typography color="text.primary" className='topography'>Others</Typography> */}

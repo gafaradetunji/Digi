@@ -26,7 +26,7 @@ const Categories = () => {
                     </Accordion>
                     <Accordion>
                         <Accordion.Item eventKey='0' className='accordion'>
-                            <Accordion.Header className='accordion-item'>
+                            <Accordion.Header className='wd-item'>
                                 <div className='accordion-header'>
                                     <img src={require('../images/science.jpg')} alt='icon living' className='accordion-img' />
                                     <span className='accordion-span'>Chemical products</span>
@@ -45,7 +45,7 @@ const Categories = () => {
                     </Accordion>
                     <Accordion>
                         <Accordion.Item eventKey='0' className='accordion'>
-                            <Accordion.Header className='accordion-item'>
+                            <Accordion.Header className='wd-item'>
                                 <div className='accordion-header'>
                                     <img src={require('../images/agriculture.jpg')} alt='icon living' className='accordion-img' />
                                     <span className='accordion-span'>Farm Products</span>
@@ -64,7 +64,7 @@ const Categories = () => {
                     </Accordion>
                     <Accordion>
                         <Accordion.Item eventKey='0' className='accordion'>
-                            <Accordion.Header className='accordion-item'>
+                            <Accordion.Header className='wd-item'>
                                 <div className='accordion-header'>
                                     <img src={require('../images/precision_manufacturing.jpg')} alt='icon living' className='accordion-img' />
                                     <span className='accordion-span'>Mechanical Products</span>
