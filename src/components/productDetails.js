@@ -14,7 +14,7 @@ const ProductPage = () => {
     const { id } = useParams()
     const sliderRef = useRef(null);
     const [ active, setActive ] = useState(true)
-    const [ isActive, setIsActive ] = useState(false)
+    const [ isActive, setIsActive ] = useState(0)
 
     const Product = () => {
         setActive(true)
@@ -125,8 +125,8 @@ const ProductPage = () => {
           </div>
           <div className='prod-details'>
             <div className='prod-anchor'>
-              <button className='' onClick={Product}>Product Details</button>
-              <button className='' onClick={Company}>Company Profile</button>
+              <button className={`${active === 0 ? 'active' : '' }`} onClick={Product}>Product Details</button>
+              <button className={`${active === 0 ? 'active' : '' }`} onClick={Company}>Company Profile</button>
             </div>
             <div className={`all-in-all row ${ active ? 'show active': 'collapse'}`}>
               <div className='about-product col-sm-8'>
