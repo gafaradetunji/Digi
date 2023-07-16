@@ -31,8 +31,8 @@ const NavBar = () => {
     return(
         <main>
           <div className='cat-div'>
-            <nav className="navbar navbar-expand-lg">
-        <div class="container-fluid nav-mobile">
+        <nav className="navbar navbar-expand-lg">
+        <div className="container-fluid nav-mobile">
             <div>
                 <button onClick={showCat} className="navbar-toggler toggle-on" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -79,11 +79,11 @@ const NavBar = () => {
                         <Accordion.Body>
                           <ul>
                             <div className={`ul-inner-accordion`}>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/chemical`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/chemical`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/chemical`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/chemical`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/chemical`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
                             </div>
                         </ul>
                         </Accordion.Body>
@@ -100,11 +100,11 @@ const NavBar = () => {
                         <Accordion.Body>
                         <ul>
                           <div className={`ul-inner-accordion`}>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/farm`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/farm`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/farm`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/farm`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/farm`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
                           </div>
                         </ul>
                         </Accordion.Body>
@@ -121,11 +121,11 @@ const NavBar = () => {
                         <Accordion.Body>
                           <ul>
                             <div className={`ul-inner-accordion`}>
-                                <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                                <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/mechanical-products`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/mechanical`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/mechanical`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/mechanical`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/mechanical`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
                             </div>
                           </ul>
                         </Accordion.Body>
@@ -137,7 +137,7 @@ const NavBar = () => {
 
             <nav className='category-nav'>
             <h3 className='mt-4'>Services</h3>
-            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
             <Accordion flush>
                 <Accordion.Item eventKey='0' className='nav-item'>
                     <Accordion.Header className='accordion-item p-2'>
@@ -149,11 +149,11 @@ const NavBar = () => {
                     <Accordion.Body>
                         <ul>
                           <div className={`ul-inner-accordion`}>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/x-services`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/x-services`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/x-services`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/x-services`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/x-services`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
                           </div>
                         </ul>
                     </Accordion.Body>
@@ -170,11 +170,11 @@ const NavBar = () => {
                         <Accordion.Body>
                           <ul>
                             <div className={`ul-inner-accordion`}>
-                                <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                                <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/send-a-qoute`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/send-a-qoute`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/send-a-qoute`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/send-a-qoute`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/send-a-qoute`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
                             </div>
                           </ul>
                         </Accordion.Body>

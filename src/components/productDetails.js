@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
-import { topDeals } from './home'
-import { useRef, useState } from 'react';
+import { topDeals, chemicals, popularBrands, plumbing } from './home'
+import { useRef, useState, useEffect } from 'react';
 import Typography from '@mui/material/Typography'
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 // import Link from '@mui/material/Link'
@@ -11,27 +11,39 @@ import SimilarProduct from './similarProduct';
 import MobileProduct from './mobile_product_page';
 
 const ProductPage = () => {
-    const { id } = useParams()
+    const { category, id } = useParams()
     const sliderRef = useRef(null);
     const [ active, setActive ] = useState(true)
+    const [productState, setProductState] = useState(topDeals)
     const [ isActive, setIsActive ] = useState(0)
 
-    const Product = () => {
-        setActive(true)
-        setIsActive(false)
-        console.log('clicked')
-    }
-    const Company = () => {
-        setActive(false)
-        setIsActive(true)
-        console.log('clicked')
-    }
-    const product = topDeals.find((p) => p.id === parseInt(id));
-    console.log('PRODUCT',product)
+    useEffect(() => {
 
-    if (!product) {
-        return <div>Product not found</div>;
+      let data = [];
+      switch (category) {
+        case 'chemical':
+          data = chemicals;
+          break;
+        case 'farm':
+          data = plumbing;
+          break;
+        case 'mechanical':
+          data = popularBrands;
+          break;
+        default:
+          data = topDeals;
+      }
+  
+      const product = data.find((p) => p.id === parseInt(id));
+  
+      setProductState(product ? [product] : []);
+    }, [category, id]);  
+
+    if (!productState.length) {
+      return <div>Product not found</div>;
     }
+
+    const [product] = productState;
 
 
   const next = () => {
@@ -41,6 +53,17 @@ const ProductPage = () => {
   const previous = () => {
     sliderRef.current.slickPrev();
   }
+
+  const Product = () => {
+    setActive(true)
+    setIsActive(false)
+    console.log('clicked')
+}
+const Company = () => {
+    setActive(false)
+    setIsActive(true)
+    console.log('clicked')
+}
 
   const settings = {
     dots: false,
@@ -85,12 +108,12 @@ const ProductPage = () => {
             </Slider>
             <div className='carousel-arrow'>
               <button className='arrow-but backward' onClick={previous}>
-                <span class="material-symbols-outlined main-arrow">
+                <span className="material-symbols-outlined main-arrow">
                     arrow_back_ios_new
                 </span>
               </button>
               <button className='arrow-but forward' onClick={next}>
-                <span class="material-symbols-outlined main-arrow">
+                <span className="material-symbols-outlined main-arrow">
                     arrow_forward_ios
                   </span>
               </button>
@@ -104,19 +127,19 @@ const ProductPage = () => {
             </div>
             <div className='dynamo-icon'>
               <Link to='#top' className='dynamo-anchor'>
-                <span class="material-symbols-outlined icon">
+                <span className="material-symbols-outlined icon">
                     favorite
                 </span>
                 Favorite
               </Link>
               <Link to='#top' className='dynamo-anchor'>
-                <span class="material-symbols-outlined icon">
+                <span className="material-symbols-outlined icon">
                     share
                 </span>
                 Share
               </Link>
               <Link to='#top' className='dynamo-anchor'>
-                <span class="material-symbols-outlined icon">
+                <span className="material-symbols-outlined icon">
                     flag
                 </span>
                 Flag

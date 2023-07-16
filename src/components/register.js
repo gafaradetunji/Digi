@@ -1,9 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom'
+import RegisterNav from './registerNav'
 const Register = () => {
   const navigate = useNavigate()
     return(
         <main className='h-100'>
-          <nav className='navbar navbar-expand-lg'>
+          <RegisterNav />
+          <nav className='navbar navbar-expand-lg register-desk'>
             <div className='register container-fluid'>
                 <p className='finance'>
                   <Link to={`/`} className='navbar-brand a-register'>
@@ -21,23 +23,23 @@ const Register = () => {
             </div>
             <form className='pt-5 mb-3 register-form'>
               <div className='each-reg'>
-                <label class="form-label">What is your location</label>
+                <label className="form-label">What is your location</label>
                 <input type='text' placeholder='Choose your location' name='location' className='form-control reg-input'/>
               </div>
               <div className='each-reg'>
-                <label class="form-label">Email Address</label>
+                <label className="form-label">Email Address</label>
                 <input type='text' placeholder='Type In Your Email Address or user ID' name='location' className='form-control'/>
               </div>
               <div className='each-reg'>
-                <label class="form-label">Phone number</label>
+                <label className="form-label">Phone number</label>
                 <input type='number' placeholder='Type In Your Phone Number' name='location' className='form-control reg-input'/>
               </div>
               <div className='each-reg'>
-                <label class="form-label">Create a passowrd</label>
+                <label className="form-label">Create a passowrd</label>
                 <input type='text' placeholder='Type In Your Desired Password' name='location' className='form-control reg-input'/>
               </div>
               <div className='each-reg'>
-                <label class="form-label">Repeat passowrd</label>
+                <label className="form-label">Repeat passowrd</label>
                 <input type='text' placeholder='Repeat Password Typed' name='location' className='form-control reg-input'/>
               </div>
               <div className='reg-condition'>

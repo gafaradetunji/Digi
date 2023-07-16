@@ -1,16 +1,42 @@
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 // import Link from '@mui/material/Link'
-import { topDeals } from './home'
+import { topDeals, chemicals, popularBrands, plumbing } from './home'
 import Categories from './categories'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import SimilarProduct from './similarProduct';
 import ElectricMobile from './electrical-mobile';
+import { useState, useEffect } from 'react';
 
 const Electrical = () => {
-const navigate = useNavigate()
+    const location = useLocation()
+    const navigate = useNavigate()
+    const [statePost, setStatePost] = useState(topDeals)
+    
+    useEffect(() => {
+        const currentPathName = location.pathname
+        console.log('currentPathName', currentPathName)
 
+        if (currentPathName === '/chemical'){
+            setStatePost(chemicals)
+            console.log('setStatePost1', setStatePost)
+        }
+        else if (currentPathName === '/farm'){
+            setStatePost(plumbing)
+            console.log('setStatePost2', setStatePost)
+        }
+        else if (currentPathName === '/mechanical'){
+            setStatePost(popularBrands)
+            console.log('setStatePost3', setStatePost)
 
+        }
+        else {
+            setStatePost(topDeals)
+            console.log('setStatePost4', setStatePost)
+
+        }
+        
+    },[location])
     return(
         <main>
             <ElectricMobile />
@@ -35,27 +61,27 @@ const navigate = useNavigate()
                     </select>
                 </div>
                 <div className='electric-card w-100 mt-4'>
-                    { topDeals.map(item => {
+                    { statePost.map(item => {
                         return(
-                        <div className='mobile-card m-3' key={item.id}>
-                            <p className='discount'>-{item.cut}%</p>
-                            <img src={item.image} alt='...' className='icon'/>
-                            <h3>{item.name}</h3>
-                            { window.innerWidth <= 600 ? 
-                                <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
-                                :<p className='desc'>{item.description}</p> 
-                            }
-                            <div className='price-container d-flex align-items-center justify-content-between'>
-                                <div className='d-flex align-items-center'>
-                                <p className='price'>₹{item.dPrice}</p>
-                                <p className='price'>₹{item.realPrice}</p>
-                                </div>
+                            <div className='mobile-card m-3' key={item.id}>
+                                <p className='discount'>-{item.cut}%</p>
+                                <img src={item.image} alt='...' className='icon'/>
+                                <h3>{item.name}</h3>
                                 { window.innerWidth <= 600 ? 
-                                    <button className='btn details' onClick={() => { navigate(`product/${item.id}`)}}>View</button>
-                                    : <button className='btn details' onClick={() => { navigate(`product/${item.id}`)}}>View Details</button>
+                                    <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
+                                    :<p className='desc'>{item.description}</p> 
                                 }
+                                <div className='price-container d-flex align-items-center justify-content-between'>
+                                    <div className='d-flex align-items-center'>
+                                    <p className='price'>₹{item.dPrice}</p>
+                                    <p className='price'>₹{item.realPrice}</p>
+                                    </div>
+                                    { window.innerWidth <= 600 ? 
+                                        <button className='btn details' onClick={() => { navigate(`product/${item.id}`)}}>View</button>
+                                        : <button className='btn details' onClick={() => { navigate(`product/${item.id}`)}}>View Details</button>
+                                    }
+                                </div>
                             </div>
-                        </div>
                         )
                     })}
                     </div>
@@ -68,7 +94,7 @@ const navigate = useNavigate()
             <div className='also-like similar d-flex align-content-center justify-content-between'>
                 { topDeals.map(item => {
                     return(
-                        <div className='mobile-card p-2 card-container m-3 col-sm-3'>
+                        <div className='mobile-card p-2 card-container m-3 col-sm-3' key={item.id}>
                             <img src={require('../images/aircon.jpg')} alt='...' className='icon'/>
                             <h3>$10.30</h3>
                             <p>Solid mini deep air conditioning system</p>

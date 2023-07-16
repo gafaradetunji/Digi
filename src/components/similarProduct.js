@@ -12,7 +12,7 @@ const SimilarProduct = () => {
                 <div className='similar w-100'>
                   { similar.map(item => {
                     return(
-                   <Card className='card m-2'>
+                   <Card className='card m-2' key={item.id}>
                     <Card.Img variant="top" src={item.image} />
                     <Card.Body>
                         <Card.Title>{item.name}</Card.Title>

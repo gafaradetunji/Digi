@@ -85,8 +85,9 @@ export const topDeals = [
     realPrice: 22,
   },
 ]
-const chemicals = [
+export const chemicals = [
   {
+    id: 1,
     cut: 10,
     image: require('../images/pop.jpg'),
     name: 'Ajepako Timber',
@@ -95,6 +96,7 @@ const chemicals = [
     realPrice: 22,
   },
   {
+    id: 2,
     cut: 10,
     image: require('../images/ice.jpg'),
     name: 'Ajepako Timber',
@@ -103,6 +105,7 @@ const chemicals = [
     realPrice: 22,
   },
   {
+    id: 3,
     cut: 10,
     image: require('../images/speaker.jpg'),
     name: 'Ajepako Timber',
@@ -111,6 +114,7 @@ const chemicals = [
     realPrice: 22,
   },
   {
+    id: 4,
     cut: 10,
     image: require('../images/speaker.jpg'),
     name: 'Ajepako Timber',
@@ -119,6 +123,7 @@ const chemicals = [
     realPrice: 22,
   },
   {
+    id: 5,
     cut: 10,
     image: require('../images/pop.jpg'),
     name: 'Ajepako Timber',
@@ -127,6 +132,7 @@ const chemicals = [
     realPrice: 22,
   },
   {
+    id: 6,
     cut: 10,
     image: require('../images/ice.jpg'),
     name: 'Ajepako Timber',
@@ -135,6 +141,7 @@ const chemicals = [
     realPrice: 22,
   },
   {
+    id: 7,
     cut: 10,
     image: require('../images/solar.jpg'),
     name: 'Ajepako Timber',
@@ -143,6 +150,7 @@ const chemicals = [
     realPrice: 22,
   },
   {
+    id: 8,
     cut: 10,
     image: require('../images/transformer.jpg'),
     name: 'Ajepako Timber',
@@ -152,8 +160,9 @@ const chemicals = [
   },
 ]
 
-const featured = [
+export const featured = [
   {
+    id: 1,
     cut: 10,
     image: require('../images/pop.jpg'),
     name: 'Ajepako Timber',
@@ -162,6 +171,7 @@ const featured = [
     realPrice: 22,
   },
   {
+    id: 2,
     cut: 10,
     image: require('../images/ice.jpg'),
     name: 'Ajepako Timber',
@@ -170,6 +180,7 @@ const featured = [
     realPrice: 22,
   },
   {
+    id: 3,
     cut: 10,
     image: require('../images/speaker.jpg'),
     name: 'Ajepako Timber',
@@ -178,6 +189,7 @@ const featured = [
     realPrice: 22,
   },
   {
+    id: 4,
     cut: 10,
     image: require('../images/speaker.jpg'),
     name: 'Ajepako Timber',
@@ -186,6 +198,7 @@ const featured = [
     realPrice: 22,
   },
   {
+    id: 5,
     cut: 10,
     image: require('../images/pop.jpg'),
     name: 'Ajepako Timber',
@@ -194,6 +207,7 @@ const featured = [
     realPrice: 22,
   },
   {
+    id: 6,
     cut: 10,
     image: require('../images/ice.jpg'),
     name: 'Ajepako Timber',
@@ -202,6 +216,7 @@ const featured = [
     realPrice: 22,
   },
   {
+    id: 7,
     cut: 10,
     image: require('../images/solar.jpg'),
     name: 'Ajepako Timber',
@@ -210,6 +225,7 @@ const featured = [
     realPrice: 22,
   },
   {
+    id: 8,
     cut: 10,
     image: require('../images/transformer.jpg'),
     name: 'Ajepako Timber',
@@ -219,8 +235,9 @@ const featured = [
   },
 ]
 
-const plumbing = [
+export const plumbing = [
   {
+    id: 1,
     cut: 10,
     image: require('../images/tap.jpg'),
     name: 'Flush for Water closet',
@@ -229,6 +246,7 @@ const plumbing = [
     realPrice: 22,
   },
   {
+    id: 2,
     cut: 10,
     image: require('../images/thermo.jpg'),
     name: 'Electric water heater',
@@ -237,6 +255,7 @@ const plumbing = [
     realPrice: 22,
   },
   {
+    id: 3,
     cut: 10,
     image: require('../images/closet.jpg'),
     name: 'Water closet',
@@ -245,6 +264,7 @@ const plumbing = [
     realPrice: 22,
   },
   {
+    id: 4,
     cut: 10,
     image: require('../images/thermo.jpg'),
     name: 'Electric Water Heater',
@@ -253,6 +273,7 @@ const plumbing = [
     realPrice: 22,
   },
   {
+    id: 5,
     cut: 10,
     image: require('../images/tap.jpg'),
     name: 'Flush for Water closet',
@@ -261,6 +282,7 @@ const plumbing = [
     realPrice: 22,
   },
   {
+    id: 6,
     cut: 10,
     image: require('../images/ice.jpg'),
     name: 'Ajepako Timber',
@@ -269,6 +291,7 @@ const plumbing = [
     realPrice: 22,
   },
   {
+    id: 7,
     cut: 10,
     image: require('../images/solar.jpg'),
     name: 'Ajepako Timber',
@@ -277,6 +300,7 @@ const plumbing = [
     realPrice: 22,
   },
   {
+    id: 8,
     cut: 10,
     image: require('../images/transformer.jpg'),
     name: 'Ajepako Timber',
@@ -288,22 +312,27 @@ const plumbing = [
 
 export const popularBrands = [
   {
+    id: 1,
     image: require('../images/volvo.jpg'),
     name: 'Volvo',
   },
   {
+    id: 2,
     image: require('../images/car-brand.jpg'),
     name: 'Merck',
   },
   {
+    id: 3,
     image: require('../images/volvo.jpg'),
     name: 'Volvo',
   },
   {
+    id: 4,
     image: require('../images/car-brand.jpg'),
     name: 'Merck',
   },
   {
+    id: 5,
     image: require('../images/volvo.jpg'),
     name: 'Volvo',
   },
@@ -311,72 +340,88 @@ export const popularBrands = [
 
 export const similar = [
   {
+    id: 1,
     image: require('../images/similar.jpg'),
     name: '9” Curvy Pipe',
   },
   {
+    id: 2,
     image: require('../images/similar.jpg'),
     name: '9” Curvy Pipe',
   },
   {
+    id: 3,
     image: require('../images/similar.jpg'),
     name: '9” Curvy Pipe',
   },
   {
+    id: 4,
     image: require('../images/similar.jpg'),
     name: '9” Curvy Pipe',
   },
   {
+    id: 5,
     image: require('../images/similar.jpg'),
     name: '9” Curvy Pipe',
   },
   {
+    id: 6,
     image: require('../images/similar.jpg'),
     name: '9” Curvy Pipe',
   },
   {
+    id: 7,
     image: require('../images/similar.jpg'),
     name: '9” Curvy Pipe',
   },
   {
+    id: 8,
     image: require('../images/similar.jpg'),
     name: '9” Curvy Pipe',
   },
   {
+    id: 9,
     image: require('../images/similar.jpg'),
     name: '9” Curvy Pipe',
   },
 ]
 
-const featured_carousel = [
+export const featured_carousel = [
   {
+    id: 1,
     image: require('../images/tesla.jpg'),
     desc: 'Cool Exotic Rides1'
   },
   {
+    id: 2,
     image: require('../images/tesla.jpg'),
     desc: 'Best Car Deals2'
   },
   {
+    id: 3,
     image: require('../images/tesla.jpg'),
     desc: 'Cool Rides3'
   },
   {
+    id: 4,
     image: require('../images/tesla.jpg'),
     desc: 'Cool Rides4'
   },
 ]
 
-const sidePhoto = [
+export const sidePhoto = [
   {
+    id: 1,
     image: require('../images/cat-img1.jpg'),
     description: '$10 off with a new supplier'
   },
   {
+    id: 2,
     image: require('../images/cat-img2.jpg'),
     description: 'Send quotes with  preferences'
   },
   {
+    id: 3,
     image: require('../images/cat-img3.jpg'),
     description: 'Best Deal around the globe'
   }
@@ -453,7 +498,7 @@ const Home = () => {
          <div className='deal-card w-100 mt-4'>
            { topDeals.map(item => {
             return(
-              <div className='mobile-card m-3'>
+              <div className='mobile-card m-3' key={item.id}>
                   <p className='discount'>-{item.cut}%</p>
                   <img src={item.image} alt='...' className='icon'/>
                   <h3>{item.name}</h3>
@@ -467,8 +512,8 @@ const Home = () => {
                       <p className='price'>₹{item.realPrice}</p>
                     </div>
                       { window.innerWidth <= 600 ? 
-                        <button className='btn details' onClick={() => { navigate(`product/${item.id}`)}}>View</button>
-                        : <button className='btn details' onClick={() => { navigate(`product/${item.id}`)}}>View Details</button>
+                        <button className='btn details' onClick={() => { navigate(`electrical/product/${item.id}`)}}>View</button>
+                        : <button className='btn details' onClick={() => { navigate(`electrical/product/${item.id}`)}}>View Details</button>
                       }
                   </div>
               </div>
@@ -488,7 +533,7 @@ const Home = () => {
          <div className='deal-card w-100 mt-4'>
            { chemicals.map(item => {
             return(
-              <div className='mobile-card m-3'>
+              <div className='mobile-card m-3' key={item.id}>
                   <p className='discount'>-{item.cut}%</p>
                   <img src={item.image} alt='...' className='icon'/>
                   <h3>{item.name}</h3>
@@ -502,8 +547,8 @@ const Home = () => {
                       <p className='price'>₹{item.realPrice}</p>
                     </div>
                     { window.innerWidth <= 600 ? 
-                        <button className='btn details'>View</button>
-                        : <button className='btn details'>View Details</button>
+                        <button className='btn details' onClick={() => { navigate(`chemical/product/${item.id}`)}}>View</button>
+                        : <button className='btn details' onClick={() => { navigate(`chemical/product/${item.id}`)}}>View Details</button>
                     }
                   </div>
               </div>
@@ -531,12 +576,12 @@ const Home = () => {
         
         <div className='carousel-arrow'>
               <button className='arrow-but backward' onClick={previous}>
-                <span class="material-symbols-outlined main-arrow">
+                <span className="material-symbols-outlined main-arrow">
                     arrow_back_ios_new
                 </span>
               </button>
               <button className='arrow-but forward' onClick={next}>
-                <span class="material-symbols-outlined main-arrow">
+                <span className="material-symbols-outlined main-arrow">
                     arrow_forward_ios
                   </span>
               </button>
@@ -551,7 +596,7 @@ const Home = () => {
             <div className='brands d-flex'>
               { popularBrands.map(item => {
               return(
-                <div className='brand-card text-center'>
+                <div className='brand-card text-center' key={item.id}>
                     <div className='brands-img'>
                       <img src={item.image} alt='...' className='brands-image'/>
                     </div>
@@ -649,7 +694,7 @@ const Home = () => {
          <div className='deal-card mt-4'>
             { plumbing.map(item => {
               return(
-              <div className='mobile-card m-3'>
+              <div className='mobile-card m-3' key={item.id}>
                   <p className='discount'>-{item.cut}%</p>
                   <img src={item.image} alt='' className='icon'/>
                   <h3>{item.name}</h3>
@@ -679,7 +724,7 @@ const Home = () => {
             <div className='brands w-100 mt-4 d-flex'>
               { popularBrands.map(item => {
               return(
-                <div className='brand-card text-center col-sm-3'>
+                <div className='brand-card text-center col-sm-3' key={item.id}>
                     <div className='brands-img'>
                       <img src={item.image} alt='...' className='brands-image'/>
                     </div>
@@ -714,7 +759,7 @@ const Home = () => {
          <div className='deal-card w-100 mt-4'>
            { featured.map(item => {
             return(
-              <div className='mobile-card m-3'>
+              <div className='mobile-card m-3' key={item.id}>
                   <p className='discount'>-{item.cut}%</p>
                   <img src={item.image} alt='...' className='icon'/>
                   <h3>{item.name}</h3>

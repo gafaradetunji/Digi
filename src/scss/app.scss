@@ -31,9 +31,12 @@ $manu-button: #e4e4e4;
 @media (min-width: 1025px) {
     html, body{
         font-family: Satoshi, sans-serif !important;
-        margin: 0 auto;
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
-        .mobile-form, .ruby{
+        width: 100%;
+        overflow-x: hidden;
+        .mobile-form, .ruby, .register-desk{
             display: none !important;
         }
         .nav-mobile{
@@ -290,6 +293,7 @@ $manu-button: #e4e4e4;
         }
         .top-deals, .all-view{
             margin-left: 40px;
+            padding-right: 30px;
             h3{
                 font-size: 30px;
                 color:$primary-color;
@@ -1013,6 +1017,252 @@ $manu-button: #e4e4e4;
         .electric-mobile{
             display: none;
         }
+
+        /******AUTH STYLINGS ********/
+        .get-started{
+            margin-top: 120px;
+                margin-left: 16px;
+                margin-right: 16px;
+                .p-start{
+                    color: $primary-color;
+                    text-align: center;
+                    font-family: Satoshi Variable;
+                    font-size: 36px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 21px;
+                    margin-bottom: 94px;
+                }
+                .google-btn{
+                    display: flex;
+                    padding: 10px 20px;
+                    background: $white;
+                    flex-direction: row;
+                    font-size: 14px;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: auto;
+                    border-radius: 10px;
+                    border: 1px solid $mobile-input;
+                    gap: 8px;
+                }
+            }
+            .register-form{
+                width: 640px;
+                margin: auto;
+                margin-top: 63px;
+                .each-reg{
+                    display: flex;
+                    padding: 0px 8px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+                    .form-label{
+                        color: $black;
+                        font-size: 16px;
+                        font-family: Satoshi;
+                        margin-left: 16px;
+                    }
+                    .form-control{
+                        display: flex;
+                        width: 90%;
+                        margin: 0 18px 16px;
+                        height: 40px;
+                        padding: 4px 8px;
+                        align-items: center;
+                        gap: 3.725px;
+                    }
+                    .form-control::placeholder{
+                        color: $forgot-text;
+                        font-size: 14px;
+                        font-family: Satoshi;
+                        line-height: 10.058px;
+                    }
+                }
+                .reg-condition{
+                    margin-left: 16px;
+                    font-family: Satoshi;
+                    margin-bottom: 76px;
+                    .checkbox{
+                        margin-right: 10px;
+                    }
+                    span{
+                        color: $black;
+                        font-size: 16px;
+                        .terms{
+                            font-size: 16px;
+                            color: $forgot-text;
+                        }
+                    }
+                }
+                .forgot-pass{
+                    float: right;
+                    margin-right: 16px;
+                    color: $primary-color;
+                    font-size: 16px;
+                    margin-bottom: 180px;
+                    font-family: Satoshi;
+                    text-decoration: none;
+                }
+                .join{
+                    color: $white;
+                    display: flex;
+                    width: 320px;
+                    padding: 14px 28px;
+                    align-items: center;
+                    gap: 8px;
+                    background: $primary-color;
+                    text-align: center;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 100px;
+                    margin-left: 150px;
+                    border-radius: 40px;
+                }
+                .forgot-btn{
+                    margin-top: 320px;
+                }
+                .new-btn{
+                    margin-top: 200px;
+                }
+            }
+            .reg-p{
+                color: $black;
+                margin-left: 80px;
+                margin-top: 10px;
+                font-size: 14px;
+                font-family: Satoshi;
+                margin-bottom: 100px;
+                .reg-log{
+                    color: $primary-color;
+                    text-align: center;
+                    font-size: 14px;
+                    font-family: Satoshi;
+                }
+            }
+                .minimo{
+                    border: 3px dashed $primary-color;
+                    // height: 636px;
+                    width: 644px;
+                    margin: auto;
+                    border-radius: 48px;
+                    margin-bottom: 100px;
+                .google-btn{
+                    display: flex;
+                    padding: 10px 20px;
+                    background: $white;
+                    flex-direction: row;
+                    font-size: 14px;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: auto;
+                    border-radius: 10px;
+                    border: 1px solid $mobile-input;
+                    gap: 8px;
+            }
+            .register-form{
+                width: 640px;
+                margin: auto;
+                margin-top: 63px;
+                .each-reg{
+                    display: flex;
+                    padding: 0px 8px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+                    .form-label{
+                        color: $black;
+                        font-size: 16px;
+                        font-family: Satoshi;
+                        margin-left: 16px;
+                    }
+                    .form-control{
+                        display: flex;
+                        width: 90%;
+                        margin: 0 18px 16px;
+                        height: 40px;
+                        padding: 4px 8px;
+                        align-items: center;
+                        gap: 3.725px;
+                    }
+                    .form-control::placeholder{
+                        color: $forgot-text;
+                        font-size: 14px;
+                        font-family: Satoshi;
+                        line-height: 10.058px;
+                    }
+                }
+                .reg-condition{
+                    margin-left: 16px;
+                    font-family: Satoshi;
+                    margin-bottom: 76px;
+                    .checkbox{
+                        margin-right: 10px;
+                    }
+                    span{
+                        color: $black;
+                        font-size: 16px;
+                        .terms{
+                            font-size: 16px;
+                            color: $forgot-text;
+                        }
+                    }
+                }
+                .forgot-pass{
+                    float: right;
+                    margin-right: 16px;
+                    color: $primary-color;
+                    font-size: 16px;
+                    margin-bottom: 180px;
+                    font-family: Satoshi;
+                    text-decoration: none;
+                }
+                .join{
+                    color: $white;
+                    display: flex;
+                    width: 320px;
+                    padding: 14px 28px;
+                    align-items: center;
+                    gap: 8px;
+                    background: $primary-color;
+                    text-align: center;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 100px;
+                    margin-left: 150px;
+                    border-radius: 40px;
+                }
+                .forgot-btn{
+                    margin-top: 320px;
+                }
+                .new-btn{
+                    margin-top: 200px;
+                }
+            }
+            .reg-p{
+                color: $black;
+                margin-left: 80px;
+                margin-top: 10px;
+                font-size: 14px;
+                font-family: Satoshi;
+                margin-bottom: 100px;
+                .reg-log{
+                    color: $primary-color;
+                    text-align: center;
+                    font-size: 14px;
+                    font-family: Satoshi;
+                }
+            }
+        }
+        .reg-footer{
+            background: $footer-grey;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+            color: $white;
+            height: 30px;
+            font-size: 14px;
+            font-family: Satoshi;
+        }
 }
 
 /**************REGISTER STYLE ****************/
@@ -1021,6 +1271,9 @@ $manu-button: #e4e4e4;
         // height: 943px;
         margin: 0;
         padding: 0;
+        .register-nav{
+            display: none;
+        }
         .navbar{
             margin: 16px;
             position: relative;
@@ -1065,6 +1318,9 @@ $manu-button: #e4e4e4;
                 font-weight: 500;
                 line-height: 21px;
             }
+        }
+        .minimo{
+
             .google-btn{
                 display: flex;
                 padding: 8px 16px;
@@ -1404,10 +1660,8 @@ $manu-button: #e4e4e4;
         display: none;
     }
     .sale{
+        padding-left: 10px;
         border-radius: 15px;
-        border-radius: 10px;
-        margin-left: 10px;
-        margin-left: 2px;
         width: 85% !important;
         height: 140px !important;
         background-image: green;
