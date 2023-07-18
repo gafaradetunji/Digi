@@ -9,7 +9,7 @@ import { ReactComponent as Auto } from "../images/auto.svg"
 import { ReactComponent as Settings } from "../images/settings.svg"
 import { useRef } from 'react'
 import Categories from './categories'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export const topDeals = [
   {
@@ -498,25 +498,27 @@ const Home = () => {
          <div className='deal-card w-100 mt-4'>
            { topDeals.map(item => {
             return(
-              <div className='mobile-card m-3' key={item.id}>
-                  <p className='discount'>-{item.cut}%</p>
-                  <img src={item.image} alt='...' className='icon'/>
-                  <h3>{item.name}</h3>
-                  { window.innerWidth <= 600 ? 
-                    <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
-                    :<p className='desc'>{item.description}</p> 
-                  }
-                  <div className='price-container d-flex align-items-center justify-content-between'>
-                    <div className='d-flex align-items-center'>
-                      <p className='price'>₹{item.dPrice}</p>
-                      <p className='price'>₹{item.realPrice}</p>
+              <Link style={{ textDecoration: 'none'}} to={`electrical/product/${item.id}`}>
+                <div className='mobile-card m-3' key={item.id}>
+                    <p className='discount'>-{item.cut}%</p>
+                    <img src={item.image} alt='...' className='icon'/>
+                    <h3>{item.name}</h3>
+                    { window.innerWidth <= 600 ? 
+                      <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
+                      :<p className='desc'>{item.description}</p> 
+                    }
+                    <div className='price-container d-flex align-items-center justify-content-between'>
+                      <div className='d-flex align-items-center'>
+                        <p className='price'>₹{item.dPrice}</p>
+                        <p className='price'>₹{item.realPrice}</p>
+                      </div>
+                        { window.innerWidth <= 600 ? 
+                          <button className='btn details' onClick={() => { navigate(`electrical/product/${item.id}`)}}>View</button>
+                          : <button className='btn details' onClick={() => { navigate(`electrical/product/${item.id}`)}}>View Details</button>
+                        }
                     </div>
-                      { window.innerWidth <= 600 ? 
-                        <button className='btn details' onClick={() => { navigate(`electrical/product/${item.id}`)}}>View</button>
-                        : <button className='btn details' onClick={() => { navigate(`electrical/product/${item.id}`)}}>View Details</button>
-                      }
-                  </div>
-              </div>
+                </div>
+              </Link>
             )
            })}
          </div>
@@ -533,25 +535,27 @@ const Home = () => {
          <div className='deal-card w-100 mt-4'>
            { chemicals.map(item => {
             return(
-              <div className='mobile-card m-3' key={item.id}>
-                  <p className='discount'>-{item.cut}%</p>
-                  <img src={item.image} alt='...' className='icon'/>
-                  <h3>{item.name}</h3>
-                  { window.innerWidth <= 600 ? 
-                    <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
-                    :<p className='desc'>{item.description}</p> 
-                  }
-                  <div className='price-container d-flex align-items-center justify-content-between'>
-                    <div className='d-flex align-items-center'>
-                      <p className='price'>₹{item.dPrice}</p>
-                      <p className='price'>₹{item.realPrice}</p>
-                    </div>
+              <Link style={{ textDecoration: 'none'}} to={`chemical/product/${item.id}`}>
+                <div className='mobile-card m-3' key={item.id}>
+                    <p className='discount'>-{item.cut}%</p>
+                    <img src={item.image} alt='...' className='icon'/>
+                    <h3>{item.name}</h3>
                     { window.innerWidth <= 600 ? 
-                        <button className='btn details' onClick={() => { navigate(`chemical/product/${item.id}`)}}>View</button>
-                        : <button className='btn details' onClick={() => { navigate(`chemical/product/${item.id}`)}}>View Details</button>
+                      <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
+                      :<p className='desc'>{item.description}</p> 
                     }
-                  </div>
-              </div>
+                    <div className='price-container d-flex align-items-center justify-content-between'>
+                      <div className='d-flex align-items-center'>
+                        <p className='price'>₹{item.dPrice}</p>
+                        <p className='price'>₹{item.realPrice}</p>
+                      </div>
+                      { window.innerWidth <= 600 ? 
+                          <button className='btn details' onClick={() => { navigate(`chemical/product/${item.id}`)}}>View</button>
+                          : <button className='btn details' onClick={() => { navigate(`chemical/product/${item.id}`)}}>View Details</button>
+                      }
+                    </div>
+                </div>
+              </Link>
             )
            })}
          </div>
@@ -596,27 +600,29 @@ const Home = () => {
             <div className='brands d-flex'>
               { popularBrands.map(item => {
               return(
-                <div className='brand-card text-center' key={item.id}>
-                    <div className='brands-img'>
-                      <img src={item.image} alt='...' className='brands-image'/>
-                    </div>
-                    <div className='brand-inner'>
-                        <h3 className=''>{item.name}</h3>
-                        <div className='automobile d-flex align-items-center'>
-                          <Auto />
-                          <h4 className=''>Automobile</h4>
-                        </div>
-                        <div className='automobile d-flex align-items-center'>
-                          <Settings />
-                          <h4 className=''>Parts</h4>
-                        </div>
-                        <div className='automobile d-flex align-items-center'>
-                          <Bike />
-                          <h4 className=''>Bicycle</h4>
-                        </div>
-                        <button className='btn details'>View Product Details</button>
-                    </div>
-                </div>
+                <Link style={{ textDecoration: 'none'}}>
+                  <div className='brand-card text-center' key={item.id}>
+                      <div className='brands-img'>
+                        <img src={item.image} alt='...' className='brands-image'/>
+                      </div>
+                      <div className='brand-inner'>
+                          <h3 className=''>{item.name}</h3>
+                          <div className='automobile d-flex align-items-center'>
+                            <Auto />
+                            <h4 className=''>Automobile</h4>
+                          </div>
+                          <div className='automobile d-flex align-items-center'>
+                            <Settings />
+                            <h4 className=''>Parts</h4>
+                          </div>
+                          <div className='automobile d-flex align-items-center'>
+                            <Bike />
+                            <h4 className=''>Bicycle</h4>
+                          </div>
+                          <button className='btn details'>View Product Details</button>
+                      </div>
+                  </div>
+                </Link>
                     )
                   })}
             </div>
@@ -694,23 +700,25 @@ const Home = () => {
          <div className='deal-card mt-4'>
             { plumbing.map(item => {
               return(
-              <div className='mobile-card m-3' key={item.id}>
-                  <p className='discount'>-{item.cut}%</p>
-                  <img src={item.image} alt='' className='icon'/>
-                  <h3>{item.name}</h3>
-                  { window.innerWidth <= 600 ? 
-                    <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
-                    :<p className='desc'>{item.description}</p> 
-                  }
-                  <div className='price-container d-flex align-items-center justify-content-between'>
-                      <p className='price'>₹{item.dPrice}</p>
-                      <p className='price'>₹{item.realPrice}</p>
-                      { window.innerWidth <= 600 ? 
-                        <button className='btn details'>View</button>
-                        : <button className='btn details'>View Details</button>
-                      }
-                      </div>
-              </div>
+                <Link style={{ textDecoration: 'none'}} to={`farm/product/${item.id}`}>
+                <div className='mobile-card m-3' key={item.id}>
+                    <p className='discount'>-{item.cut}%</p>
+                    <img src={item.image} alt='' className='icon'/>
+                    <h3>{item.name}</h3>
+                    { window.innerWidth <= 600 ? 
+                      <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
+                      :<p className='desc'>{item.description}</p> 
+                    }
+                    <div className='price-container d-flex align-items-center justify-content-between'>
+                        <p className='price'>₹{item.dPrice}</p>
+                        <p className='price'>₹{item.realPrice}</p>
+                        { window.innerWidth <= 600 ? 
+                          <button className='btn details' onClick={() => { navigate(`farm/product/${item.id}`)}}>View</button>
+                          : <button className='btn details' onClick={() => { navigate(`farm/product/${item.id}`)}}>View Details</button>
+                        }
+                        </div>
+                </div>
+                </Link>
               )
             })}
          </div>
@@ -724,27 +732,29 @@ const Home = () => {
             <div className='brands w-100 mt-4 d-flex'>
               { popularBrands.map(item => {
               return(
-                <div className='brand-card text-center col-sm-3' key={item.id}>
-                    <div className='brands-img'>
-                      <img src={item.image} alt='...' className='brands-image'/>
-                    </div>
-                    <div className='brand-inner'>
-                        <h3 className=''>{item.name}</h3>
-                        <div className='automobile d-flex align-items-center'>
-                          <Auto />
-                          <h4 className=''>The Madisson</h4>
-                        </div>
-                        <div className='automobile d-flex align-items-center'>
-                          <Settings />
-                          <h4 className=''>7 million</h4>
-                        </div>
-                        <div className='automobile d-flex align-items-center'>
-                          <Bike />
-                          <h4 className=''>$900 per container</h4>
-                        </div>
-                        <button className='btn details'>View Product Details</button>
-                    </div>
-                </div>
+                <Link style={{ textDecoration: 'none'}} to={`mechanical/product/${item.id}`}>
+                  <div className='brand-card text-center col-sm-3' key={item.id}>
+                      <div className='brands-img'>
+                        <img src={item.image} alt='...' className='brands-image'/>
+                      </div>
+                      <div className='brand-inner'>
+                          <h3 className=''>{item.name}</h3>
+                          <div className='automobile d-flex align-items-center'>
+                            <Auto />
+                            <h4 className=''>The Madisson</h4>
+                          </div>
+                          <div className='automobile d-flex align-items-center'>
+                            <Settings />
+                            <h4 className=''>7 million</h4>
+                          </div>
+                          <div className='automobile d-flex align-items-center'>
+                            <Bike />
+                            <h4 className=''>$900 per container</h4>
+                          </div>
+                          <button className='btn details' onClick={() => { navigate(`mechanical/product/${item.id}`)}}>View Product Details</button>
+                      </div>
+                  </div>
+                </Link>
                     )
                   })}
             </div>
@@ -759,25 +769,27 @@ const Home = () => {
          <div className='deal-card w-100 mt-4'>
            { featured.map(item => {
             return(
-              <div className='mobile-card m-3' key={item.id}>
-                  <p className='discount'>-{item.cut}%</p>
-                  <img src={item.image} alt='...' className='icon'/>
-                  <h3>{item.name}</h3>
-                  { window.innerWidth <= 600 ? 
-                    <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
-                    :<p className='desc'>{item.description}</p> 
-                  }
-                  <div className='price-container d-flex align-items-center justify-content-between'>
-                    <div className='d-flex align-items-center'>
-                      <p className='price'>₹{item.dPrice}</p>
-                      <p className='price'>₹{item.realPrice}</p>
-                    </div>
+              <Link style={{ textDecoration: 'none'}}>
+                <div className='mobile-card m-3' key={item.id}>
+                    <p className='discount'>-{item.cut}%</p>
+                    <img src={item.image} alt='...' className='icon'/>
+                    <h3>{item.name}</h3>
                     { window.innerWidth <= 600 ? 
-                        <button className='btn details'>View</button>
-                        : <button className='btn details'>View Details</button>
+                      <p className='desc'>{item.description.substring(0, 40) + '...'}</p>
+                      :<p className='desc'>{item.description}</p> 
                     }
-                  </div>
-              </div>
+                    <div className='price-container d-flex align-items-center justify-content-between'>
+                      <div className='d-flex align-items-center'>
+                        <p className='price'>₹{item.dPrice}</p>
+                        <p className='price'>₹{item.realPrice}</p>
+                      </div>
+                      { window.innerWidth <= 600 ? 
+                          <button className='btn details'>View</button>
+                          : <button className='btn details'>View Details</button>
+                      }
+                    </div>
+                </div>
+              </Link>
             )
            })}
          </div>

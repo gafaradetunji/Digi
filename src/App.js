@@ -14,6 +14,7 @@ import NewPassword from './components/newPassword';
 import ProductPage from './components/productDetails'
 
 function App() {
+  
   return (
     <Router>
       <Routes>
@@ -28,9 +29,6 @@ function App() {
           <Route path=':category'>
             <Route path="product/:id" element={<ProductPage />} />
           </Route>
-          {/* <Route path="chemical/product/:id" element={<ProductPage />} />
-          <Route path="farm/product/:id" element={<ProductPage />} />
-          <Route path="mechanical/product/:id" element={<ProductPage />} /> */}
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
