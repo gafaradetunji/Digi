@@ -97,7 +97,7 @@ const Login = () => {
               <div className='each-reg'>
                 <label className="form-label">Passowrd</label>
                 <p className='error'>{formError.password}</p>
-                <input type='text' placeholder='Enter your password' value={values.password} onChange={handleChange} name='password' className='form-control reg-input'/>
+                <input type='password' placeholder='Enter your password' value={values.password} onChange={handleChange} name='password' className='form-control reg-input'/>
               </div>
                 <Link to='/forgotPass' className='forgot-pass'>Forget Password?</Link>
               <button className='form-control join'>Log In</button>

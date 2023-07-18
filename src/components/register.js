@@ -134,12 +134,12 @@ const Register = () => {
               <div className='each-reg'>
                 <label className="form-label">Create a passowrd</label>
                 <p className='error'>{formError.password}</p>
-                <input type='text' placeholder='Type In Your Desired Password' name='password' className='form-control reg-input' value={values.password} onChange={handleChange}/>
+                <input type='password' placeholder='Type In Your Desired Password' name='password' className='form-control reg-input' value={values.password} onChange={handleChange}/>
               </div>
               <div className='each-reg'>
                 <label className="form-label">Repeat passowrd</label>
                 <p className='error'>{formError.confirmPassword}</p>
-                <input type='text' placeholder='Repeat Password Typed' name='confirmPassword' className='form-control reg-input' value={values.confirmPassword} onChange={handleChange}/>
+                <input type='password' placeholder='Repeat Password Typed' name='confirmPassword' className='form-control reg-input' value={values.confirmPassword} onChange={handleChange}/>
               </div>
               <div className='reg-condition'>
                 <input type='checkbox' className='checkbox'/><span>Agree to <a href='#top' className='terms'>terms and condition</a></span>
