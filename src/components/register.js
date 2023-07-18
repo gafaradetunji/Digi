@@ -20,7 +20,7 @@ const Register = () => {
   const validateForm = () => {
     const error = {}
 
-    const emailValidation = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/
+    const emailValidation = /^[a-z0-9]+@(?:[a-z0-9]+\.)+[a-z]+$/
     const numberValidation = /^[0-9]+/
 
     if (values.location === '') {
