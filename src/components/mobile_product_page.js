@@ -1,6 +1,7 @@
 import Breadcrumbs from '@mui/material/Breadcrumbs'
 // import Link from '@mui/material/Link'
 import { Link } from 'react-router-dom'
+import Search from './mobile_search_icon'
 
 const MobileProduct = () => {
     return(
@@ -22,10 +23,7 @@ const MobileProduct = () => {
                 <img src={require('../images/auth-user.jpg')} alt='' className='user-nav'/>
                 </div>
           </div>
-          <form className='mobile-search mobile-prod'>
-            <img src={require('../images/search.jpg')} alt='' className='nav-search'/> 
-            <input type='text' className='input-nav' placeholder='Search Digistore'/>
-          </form>
+          <Search />
         </main>
     )
 }

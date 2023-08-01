@@ -2,6 +2,7 @@
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import { topDeals } from './home'
 import { Link, useNavigate } from 'react-router-dom';
+import Search from './mobile_search_icon';
 
 const ElectricMobile = () => {
     const navigate = useNavigate()
@@ -24,10 +25,7 @@ const ElectricMobile = () => {
               <img src={require('../images/auth-user.jpg')} alt='' className='user-nav'/>
             </div>
           </div>
-          <form className='mobile-search'>
-            <img src={require('../images/search.jpg')} alt='' className='nav-search'/> 
-            <input type='text' className='input-nav' placeholder='Search Digistore'/>
-          </form>
+          <Search />
           <div className='d-flex align-items-center justify-content-between'>
             <div></div>
             <select className='select-mobile'>

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import RegisterNav from './registerNav'
+import RegisterMobileNav from './registerMobileNav'
 import axios from 'axios'
 const Login = () => {
   const navigate = useNavigate()
@@ -60,7 +61,7 @@ const Login = () => {
       const authToken = response.data.token;
       localStorage.setItem('authToken', authToken)
       console.log('Login successful');
-      isvalid && navigate('/')//where error is coming from
+      isvalid && navigate('/')
       console.log('Message:', response);
       console.log('Token:', response.data.token);
     } catch (error) {
@@ -69,24 +70,13 @@ const Login = () => {
   };
   
     return(
-        <main className='h-100'>
+        <main className='h-[800px] relative'>
           <RegisterNav />
-          <nav className='navbar navbar-expand-lg register-desk'>
-            <div className='register container-fluid'>
-                <p className='finance'>
-                  <Link to={`/`} className='navbar-brand a-register'>
-                      <span className='dig'>Digi</span>
-                      <img src={require('../images/logo2.jpg')} alt='' className='img-register'/>
-                  </Link>
-                </p>
-                <Link to='#top' className='navbar-list'>Be a manufacutrer</Link>
-                <Link to='#top' className='navbar-list'>Contact Us</Link>
-            </div>
-          </nav>
+          <RegisterMobileNav />
             <div className='get-started text-center'>
                 <p className='p-start'>Get Into DIGI</p>
             </div>
-          <div className='minimo'>
+          <div className='minimo mb-[100px]'>
             <form className='pt-5 mb-3 register-form h-75' onSubmit={handleSubmit}>
               <button className='google-btn mb-5 p-2'>Sign up with google<img src={require('../images/google.jpg')} alt='' /></button>
               <div className='each-reg'>

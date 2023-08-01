@@ -120,7 +120,7 @@ const Company = () => {
           </div>
           </div>
           <div className='dynamic-fav d-flex align-items-center justify-content-between'>
-            <div className='left-images'>
+            <div className='left-images flex'>
                 <img src={product.image} alt='' />
                 <img src={product.image} alt='' />
                 <img src={product.image} alt='' />

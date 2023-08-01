@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import RegisterNav from './registerNav'
+import RegisterMobileNav from './registerMobileNav'
 import axios from 'axios'
 const Register = () => {
   const navigate = useNavigate()
@@ -99,18 +100,7 @@ const Register = () => {
     return(
         <main className='h-100'>
           <RegisterNav />
-          <nav className='navbar navbar-expand-lg register-desk'>
-            <div className='register container-fluid'>
-                <p className='finance'>
-                  <Link to={`/`} className='navbar-brand a-register'>
-                      <span className='dig'>Digi</span>
-                      <img src={require('../images/logo2.jpg')} alt='' className='img-register'/>
-                  </Link>
-                </p>
-                <Link to='#top' className='navbar-list'>Be a manufacutrer</Link>
-                <Link to='#top' className='navbar-list'>Contact Us</Link>
-            </div>
-          </nav>
+          <RegisterMobileNav />
             <div className='get-started text-center'>
                 <p className='p-start'>Let’s Get Started</p>
                 <button className='google-btn p-2'>Sign up with google<img src={require('../images/google.jpg')} alt='' /></button>

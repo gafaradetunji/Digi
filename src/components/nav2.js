@@ -12,7 +12,7 @@ const Nav2 = () => {
     return(
         <main>
             <div className='top-nav container-fluid pt-4 d-flex align-items-center justify-content-between mobile-nav2'>
-              <div className='d-flex align-items-center justify-content-between logo'><h1>Digi</h1><img src={require('../images/logo2.jpg')} alt='' /></div>
+              <Link to={'/'} className='d-flex align-items-center justify-content-between text-black no-underline logo'><img src={require('../images/logo2.jpg')} alt='' /><h1>Digi</h1></Link>
               <form className='search d-flex align-items-center flex-row'>
                 <img src={require('../images/search.jpg')} alt='' />
                 <input type='text' className='' placeholder='Search Digistore'/>

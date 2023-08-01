@@ -10,6 +10,7 @@ import { ReactComponent as Settings } from "../images/settings.svg"
 import { useRef } from 'react'
 import Categories from './categories'
 import { useNavigate, Link } from 'react-router-dom';
+import Search from './mobile_search_icon'
 
 export const topDeals = [
   {
@@ -451,10 +452,7 @@ const Home = () => {
   
     return(
         <main>
-          <form className='mobile-search'>
-            <img src={require('../images/search.jpg')} alt='' className='nav-search'/> 
-            <input type='text' className='input-nav' placeholder='Search Digistore'/>
-          </form>
+          <Search />
           <div className='home-mobile'>
             <div className='home-div w-100 d-flex flex-row m-auto align-items-center justify-content-center'>
               <div className='top-home w-50 text-center'>
@@ -474,14 +472,14 @@ const Home = () => {
           {/**************************CATEGORIES************** */}
           <div className='categories d-flex align-items-center justify-content-between'>
             <Categories />
-            <div className=''>
-                <img src={require('../images/cat-pic.jpg')} alt='...' className='sale' />
+            <div className='flex'>
+                <img src={require('../images/cat-pic.jpg')} alt='...' className='ml-2 rounded-md w-[85%] h-[140px] mr-0 lg:w-[800px] lg:h-[350px]' />
               </div>
-              <div className='side-photo'>
-                <div className='w-25 mt-2 d-flex flex-column align-items-center justify-content-between'>
+              <div className='ml-0'>
+                <div className='side-photo relative'>
                   { sidePhoto.map(item => {
                     return(
-                      <div className="mt-2 absolute-img"><img src={item.image} alt='...' className='sale-img'/><span className='img-top'>{item.description}</span></div>
+                      <div className="absolute-img"><img src={item.image} alt='...' className='my-2 h-[35px] lg:h-[100px] lg:w-[250px] w-[100px] sale-img lg:ml-0'/><div className='flex flex-column absolute h-[200px]  lg:w-[250px] lg:text-[16px] w-[50px] img-top'><span className='absolute font-semibold text-center lg:text-[16px] text-[7px] font-serif text-white top-[-40px] lg:top-[-90px]'>{item.description}</span></div></div>
                     )
                   })}
                 </div>
@@ -498,7 +496,7 @@ const Home = () => {
          <div className='deal-card w-100 mt-4'>
            { topDeals.map(item => {
             return(
-              <Link style={{ textDecoration: 'none'}} to={`electrical/product/${item.id}`}>
+              <Link style={{ textDecoration: 'none'}} className='text-black' to={`electrical/product/${item.id}`}>
                 <div className='mobile-card m-3' key={item.id}>
                     <p className='discount'>-{item.cut}%</p>
                     <img src={item.image} alt='...' className='icon'/>
@@ -535,7 +533,7 @@ const Home = () => {
          <div className='deal-card w-100 mt-4'>
            { chemicals.map(item => {
             return(
-              <Link style={{ textDecoration: 'none'}} to={`chemical/product/${item.id}`}>
+              <Link style={{ textDecoration: 'none'}} className='text-black' to={`chemical/product/${item.id}`}>
                 <div className='mobile-card m-3' key={item.id}>
                     <p className='discount'>-{item.cut}%</p>
                     <img src={item.image} alt='...' className='icon'/>
@@ -687,7 +685,7 @@ const Home = () => {
                     <img src={require('../images/closet.jpg')} alt='closet' />
                     <p>Water Closet</p>
                     <span className='span'>-25%</span>
-                </div>
+              </div>
             </div>
          </div>
          {/**********************************PLUMBING PRODUCTS********************** */}
@@ -700,7 +698,7 @@ const Home = () => {
          <div className='deal-card mt-4'>
             { plumbing.map(item => {
               return(
-                <Link style={{ textDecoration: 'none'}} to={`farm/product/${item.id}`}>
+                <Link style={{ textDecoration: 'none'}} className='text-black' to={`farm/product/${item.id}`}>
                 <div className='mobile-card m-3' key={item.id}>
                     <p className='discount'>-{item.cut}%</p>
                     <img src={item.image} alt='' className='icon'/>

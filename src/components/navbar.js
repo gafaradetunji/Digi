@@ -1,8 +1,13 @@
 import { Link, Outlet, useNavigate } from 'react-router-dom'
-import Accordion from 'react-bootstrap/Accordion'
+// import Accordion from 'react-bootstrap/Accordion'
 import '../scss/app.scss'
 import { useState } from 'react'
 import Footer from './footer'
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 const NavBar = () => {
@@ -12,6 +17,11 @@ const NavBar = () => {
     const [ active, setActive ] = useState(0)
 
 
+    const [expanded, setExpanded] = useState(false);
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
+    
     const showCat = () => {
         console.log('show working')
         setShowCategory(true);
@@ -20,7 +30,7 @@ const NavBar = () => {
     }
     const hideCat = () => {
         console.log('hide working')
-        setHideCategory(prevState => !prevState);
+        setHideCategory(false);
         console.log('hide worked')
     }
 
@@ -33,103 +43,120 @@ const NavBar = () => {
           <div className='cat-div'>
         <nav className="navbar navbar-expand-lg">
         <div className="container-fluid nav-mobile">
-            <div>
+            <div className='flex'>
                 <button onClick={showCat} className="navbar-toggler toggle-on" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
-                <Link className="navbar-brand" to={`/`}><span className='dig'>DIGI</span><img src={require('../images/logo2.jpg')} alt='' className='img-register'/></Link>
+                <Link className="navbar-brand" to={`/`}><span className='dig'>DIGI</span>
+                <img src={require('../images/logo2.jpg')} alt='' className='img-register'/></Link>
             </div>
             {showCategory && (
                 
-            <div className={`collapse ${hideCategory ? 'show' : ''} category-show cat-nav navbar-collapse`} id="#navbarSupportedContent">
+            <div className={`${hideCategory ? 'show' : 'no-show'} category-show cat-nav navbar-collapse`} id="#navbarSupportedContent">
             <div className='d-flex align-self-items justify-content-between'>
               <h3 className=''>Categories</h3>
-              <button className={`show ${hideCategory ? 'collapse' : ''}`} onClick={hideCat} style={{ border: 'none', outline: 'none'}}><img src={require('../images/cancel.jpg')} alt='' style={{ width: '30px', height: '30px'}} /></button>
+              <button className={`${hideCategory ? 'none' : ''}`} onClick={hideCat} style={{ border: 'none', outline: 'none'}}><img src={require('../images/cancel.jpg')} alt='' style={{ width: '30px', height: '30px'}} /></button>
             </div>
             <ul className="navbar-nav ml-auto mb-2 mb-lg-0 category-nav">
-            <Accordion flush>
-                <Accordion.Item eventKey='0' className='nav-item'>
-                    <Accordion.Header className='accordion-item p-2'>
-                        <div className='accordion-header'>
-                            <img src={require('../images/electrical_services.jpg')} alt='icon living' className='accordion-img' />
-                            <span className='accordion-span'>Electrical Products</span>
-                        </div>
-                    </Accordion.Header>
-                    <Accordion.Body>
+                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1bh-content"
+                    id="panel1bh-header"
+                    >
+                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                        <img src={require('../images/electrical_services.jpg')} alt='icon living' className='accordion-img' />
+                    </Typography>
+                    <Typography>
+                        <span className='accordion-span'>Electrical Products</span>
+                    </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
                         <ul>
-                          <div className={`ul-inner-accordion`}>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/electrical`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                          <div className='ul-inner-aaccordion'>
+                            <li className='p-3'><Link to={`/electrical`} className='no-underline text-black flex justify-between'>Building Materials <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/electrical`} className='no-underline text-black flex justify-between'>Computers and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/electrical`} className='no-underline text-black flex justify-between'>Phone and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/electrical`} className='no-underline text-black flex justify-between'>Solar Pannels <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/electrical`} className='no-underline text-black flex justify-between'>Others <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
                           </div>
                         </ul>
-                    </Accordion.Body>
-                </Accordion.Item>
-            </Accordion>
-                <Accordion flush>
-                    <Accordion.Item eventKey='0' className='nav-item'>
-                        <Accordion.Header className='accordion-item p-2'>
-                            <div className='accordion-header'>
-                                <img src={require('../images/science.jpg')} alt='icon living' className='accordion-img' />
-                                <span className='accordion-span'>Chemical products</span>
-                            </div>
-                            </Accordion.Header>
-                        <Accordion.Body>
-                          <ul>
-                            <div className={`ul-inner-accordion`}>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/chemical`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/chemical`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/chemical`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/chemical`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/chemical`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            </div>
-                        </ul>
-                        </Accordion.Body>
-                    </Accordion.Item>
+                    </AccordionDetails>
                 </Accordion>
-                <Accordion flush>
-                    <Accordion.Item eventKey='0' className='nav-item'>
-                        <Accordion.Header className='accordion-item p-2'>
-                            <div className='accordion-header'>
-                                <img src={require('../images/agriculture.jpg')} alt='icon living' className='accordion-img' />
-                                <span className='accordion-span'>Farm Products</span>
-                            </div>
-                            </Accordion.Header>
-                        <Accordion.Body>
+                <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1bh-content"
+                    id="panel1bh-header"
+                    >
+                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                        <img src={require('../images/electrical_services.jpg')} alt='icon living' className='accordion-img' />
+                    </Typography>
+                    <Typography>
+                        <span className='accordion-span'>Chemical Products</span>
+                    </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
                         <ul>
-                          <div className={`ul-inner-accordion`}>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/farm`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/farm`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/farm`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/farm`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/farm`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                          <div className='ul-inner-aaccordion'>
+                            <li className='p-3'><Link to={`/chemical`} className='no-underline text-black flex justify-between'>Building Materials <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/chemical`} className='no-underline text-black flex justify-between'>Computers and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/chemical`} className='no-underline text-black flex justify-between'>Phone and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/chemical`} className='no-underline text-black flex justify-between'>Solar Pannels <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/chemical`} className='no-underline text-black flex justify-between'>Others <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
                           </div>
                         </ul>
-                        </Accordion.Body>
-                    </Accordion.Item>
+                    </AccordionDetails>
                 </Accordion>
-                <Accordion flush>
-                    <Accordion.Item eventKey='0' className='nav-item'>
-                        <Accordion.Header className='accordion-item p-2'>
-                            <div className='accordion-header'>
-                                <img src={require('../images/precision_manufacturing.jpg')} alt='icon living' className='accordion-img' />
-                                <span className='accordion-span'>Mechanical Products</span>
-                            </div>
-                            </Accordion.Header>
-                        <Accordion.Body>
-                          <ul>
-                            <div className={`ul-inner-accordion`}>
-                                <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/mechanical-products`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/mechanical`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/mechanical`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/mechanical`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/mechanical`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            </div>
-                          </ul>
-                        </Accordion.Body>
-                    </Accordion.Item>
+                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1bh-content"
+                    id="panel1bh-header"
+                    >
+                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                        <img src={require('../images/electrical_services.jpg')} alt='icon living' className='accordion-img' />
+                    </Typography>
+                    <Typography>
+                        <span className='accordion-span'>Farm Products</span>
+                    </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <ul>
+                          <div className='ul-inner-aaccordion'>
+                            <li className='p-3'><Link to={`/farm`} className='no-underline text-black flex justify-between'>Building Materials <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/farm`} className='no-underline text-black flex justify-between'>Computers and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/farm`} className='no-underline text-black flex justify-between'>Phone and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/farm`} className='no-underline text-black flex justify-between'>Solar Pannels <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/farm`} className='no-underline text-black flex justify-between'>Others <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                          </div>
+                        </ul>
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1bh-content"
+                    id="panel1bh-header"
+                    >
+                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                        <img src={require('../images/electrical_services.jpg')} alt='icon living' className='accordion-img' />
+                    </Typography>
+                    <Typography>
+                        <span className='accordion-span'>Mechanical Products</span>
+                    </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <ul>
+                          <div className='ul-inner-aaccordion'>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Building Materials <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Computers and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Phone and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Solar Pannels <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Others <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                          </div>
+                        </ul>
+                    </AccordionDetails>
                 </Accordion>
             </ul>
 
@@ -138,47 +165,55 @@ const NavBar = () => {
             <nav className='category-nav'>
             <h3 className='mt-4'>Services</h3>
             <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
-            <Accordion flush>
-                <Accordion.Item eventKey='0' className='nav-item'>
-                    <Accordion.Header className='accordion-item p-2'>
-                        <div className='accordion-header'>
-                            <img src={require('../images/electrical_services.jpg')} alt='icon living' className='accordion-img' />
-                            <span className='accordion-span'>x-Services</span>
-                        </div>
-                        </Accordion.Header>
-                    <Accordion.Body>
+            <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1bh-content"
+                    id="panel1bh-header"
+                    >
+                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                        <img src={require('../images/electrical_services.jpg')} alt='icon living' className='accordion-img' />
+                    </Typography>
+                    <Typography>
+                        <span className='accordion-span'>X-Services</span>
+                    </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
                         <ul>
-                          <div className={`ul-inner-accordion`}>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/x-services`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/x-services`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/x-services`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/x-services`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/x-services`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
+                          <div className='ul-inner-aaccordion'>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Building Materials <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Computers and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Phone and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Solar Pannels <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Others <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
                           </div>
                         </ul>
-                    </Accordion.Body>
-                </Accordion.Item>
+                    </AccordionDetails>
                 </Accordion>
-                <Accordion flush>
-                    <Accordion.Item eventKey='0' className='nav-item'>
-                        <Accordion.Header className='accordion-item p-2'>
-                            <div className='accordion-header'>
-                                <img src={require('../images/science.jpg')} alt='icon living' className='accordion-img' />
-                                <span className='accordion-span'>Send a quote</span>
-                            </div>
-                            </Accordion.Header>
-                        <Accordion.Body>
-                          <ul>
-                            <div className={`ul-inner-accordion`}>
-                                <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/send-a-qoute`} className='li-inner-accordion'>Building Materials</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/send-a-qoute`} className='li-inner-accordion'>Computers and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/send-a-qoute`} className='li-inner-accordion'>Phones and Accessories</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/send-a-qoute`} className='li-inner-accordion'>Solar Panels</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                              <li className='p-3 after d-flex align-items-center justify-content-between'><Link to={`/send-a-qoute`} className='li-inner-accordion'>Others</Link><img src={require('../images/forward.jpg')} alt='' /></li>
-                            </div>
-                          </ul>
-                        </Accordion.Body>
-                    </Accordion.Item>
+                <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1bh-content"
+                    id="panel1bh-header"
+                    >
+                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                        <img src={require('../images/electrical_services.jpg')} alt='icon living' className='accordion-img' />
+                    </Typography>
+                    <Typography>
+                        <span className='accordion-span'>Send a qoute</span>
+                    </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <ul>
+                          <div className='ul-inner-aaccordion'>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Building Materials <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Computers and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Phone and accessories <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Solar Pannels <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                            <li className='p-3'><Link to={`/mechanical`} className='no-underline text-black flex justify-between'>Others <ExpandMoreIcon className='rotate-[276deg]'/></Link></li>
+                          </div>
+                        </ul>
+                    </AccordionDetails>
                 </Accordion>
             </ul>
 
@@ -189,7 +224,7 @@ const NavBar = () => {
             </div>
             )}
             <div className='auth-nav'>
-              <img src={require('../images/cart.jpg')} alt='' className='nav-cart'/>
+              <button><span className="material-symbols-outlined nav-cart">shopping_cart</span></button>
               <img src={require('../images/auth-user.jpg')} alt='' className='user-nav'/>
             </div>
             <div className='nav mobile-nav'>

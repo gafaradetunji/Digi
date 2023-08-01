@@ -1,21 +1,11 @@
 import { Link } from 'react-router-dom'
 import RegisterNav from './registerNav'
+import RegisterMobileNav from './registerMobileNav'
 const NewPassword = () => {
     return(
         <main className='h-100'>
           <RegisterNav />
-          <nav className='navbar navbar-expand-lg register-desk'>
-            <div className='register container-fluid'>
-                <p className='finance'>
-                  <Link to={`/`} className='navbar-brand a-register'>
-                      <span className='dig'>Digi</span>
-                      <img src={require('../images/logo2.jpg')} alt='' className='img-register'/>
-                  </Link>
-                </p>
-                <Link to='#top' className='navbar-list'>Be a manufacutrer</Link>
-                <Link to='#top' className='navbar-list'>Contact Us</Link>
-            </div>
-          </nav>
+          <RegisterMobileNav />
             <div className='get-started text-center'>
                 <p className='p-start'>Set New Password</p>
             </div>
