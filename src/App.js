@@ -19,6 +19,7 @@ import ManufacutrerProduct from './components/manufacturer/manufacture_product';
 import EditManufacturerProduct from './components/manufacturer/manufacturer_edit';
 import ShippingPrice from './components/manufacturer/shipping_price';
 import Policies from './components/manufacturer/policies';
+import LoginManufacturer from './components/manufacturer/login_manufacturer';
 
 function App() {
   
@@ -43,6 +44,7 @@ function App() {
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/registerman" element={<RegisterManufacturer />} />
+        <Route path="/loginman" element={<LoginManufacturer />} />
         <Route path="/company" element={<Company />} />
         <Route path="/addition" element={<Additional />} />
         <Route path="/login" element={<Login />} />

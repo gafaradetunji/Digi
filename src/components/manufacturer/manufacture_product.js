@@ -22,15 +22,13 @@ const ManufacutrerProduct = () => {
     return(
         <main className='mb-[300px] manpro'>
             <div className=''>
-                <div className=''>
-                    <div className='all-view'>
-                        <Link to={`/`} className='back-track d-flex align-items-center justify-content-between'>
-                            <img src={require('../../images/back-track.jpg')} alt='' className='back-img'/>
-                            <p>Back</p>
-                        </Link>
-                    </div>
+                <div className='mobile-elect d-flex align-items-center'>
+                    <Link to={`/`} className='mob-anch flex h-[20px] mt-4 ml-4 justify-between w-[120px] text-black no-underline'>
+                        <img src={require('../../images/back-track.jpg')} alt='' className=''/>
+                        <p className='font-normal'>My Products</p>
+                    </Link>
                 </div>
-                <p className='pl-12 mt-4 font-normal'>My Products</p>
+                {/* <p className='pl-12 mt-4 font-normal hidden lg:block'>My Products</p> */}
             </div>
             <div className='d-flex justify-content-between mr-6'>
                 <p></p>
@@ -59,6 +57,7 @@ const ManufacutrerProduct = () => {
                                 <td className='text-center'>{item.status}</td>
                                 <td className='text-center'>{item.published}</td>
                                 <td className='text-center'>{item.unit}</td>
+                                <button><span class="material-symbols-outlined">delete</span></button>
                             </tr>
                         ))}
                     </tbody>
