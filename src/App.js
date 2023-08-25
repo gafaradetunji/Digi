@@ -12,14 +12,6 @@ import './scss/app.scss';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import NewPassword from './components/newPassword';
 import ProductPage from './components/productDetails'
-import RegisterManufacturer from './components/manufacturer/register_manufacturer';
-import Company from './components/manufacturer/company';
-import Additional from './components/manufacturer/additonal_detail';
-import ManufacutrerProduct from './components/manufacturer/manufacture_product';
-import EditManufacturerProduct from './components/manufacturer/manufacturer_edit';
-import ShippingPrice from './components/manufacturer/shipping_price';
-import Policies from './components/manufacturer/policies';
-import LoginManufacturer from './components/manufacturer/login_manufacturer';
 
 function App() {
   
@@ -34,19 +26,11 @@ function App() {
           <Route path="chemical" element={<Electrical />} />
           <Route path="mechanical" element={<Electrical />} />
           <Route path="farm" element={<Electrical />} />
-          <Route path="/manufacturerProduct" element={<ManufacutrerProduct />} />
-          <Route path="/editmanufacturer" element={<EditManufacturerProduct />} />
-          <Route path="/shipping" element={<ShippingPrice />} />
-          <Route path="/policies" element={<Policies />} />
           <Route path=':category'>
             <Route path="product/:id" element={<ProductPage />} />
           </Route>
         </Route>
         <Route path="/register" element={<Register />} />
-        <Route path="/registerman" element={<RegisterManufacturer />} />
-        <Route path="/loginman" element={<LoginManufacturer />} />
-        <Route path="/company" element={<Company />} />
-        <Route path="/addition" element={<Additional />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgotPass" element={<ForgotPass />} />
         <Route path="/forgototp" element={<ForgotOTP />} />

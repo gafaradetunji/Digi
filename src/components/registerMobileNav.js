@@ -9,7 +9,7 @@ const RegisterMobileNav = () => {
                       <img src={require('../images/logo2.jpg')} alt='' className='img-register'/>
                   </Link>
                 </p>
-                <Link to={`/registerman`} className='navbar-list'>Be a manufacutrer</Link>
+                <Link to={`https://digimanufacturer.vercel.app/`} className='navbar-list'>Be a manufacutrer</Link>
                 <Link to='#top' className='navbar-list'>Contact Us</Link>
             </div>
         </nav>

@@ -12,7 +12,7 @@ const RegisterNav = () => {
                             <div className='nav mobile-nav'>
                                 <ul className='ul-nav nav d-flex align-items-center justify-content-between'>
                                     <li className='nav-item'><Link className={`nav-link nav-nav`} to={`/`}>FAQs</Link></li>
-                                    <li className='nav-item'><Link className={`nav-link nav-nav`} to={`/registerman`}>Be a manufacutrer</Link></li>
+                                    <li className='nav-item'><Link className={`nav-link nav-nav`} to={`https://digimanufacturer.vercel.app/`}>Be a manufacutrer</Link></li>
                                     <li className='nav-item'><Link className={`nav-link nav-nav`} to={`/electrical`}>X-Services</Link></li>
                                     <li className='nav-item'><Link className={`nav-link nav-nav`} to='#top'>Contact Us</Link></li>
                                     <li className='nav-item'><Link className={`nav-link nav-nav`} to={`/login`}>Log In</Link></li>
